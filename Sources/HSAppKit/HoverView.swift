@@ -5,9 +5,11 @@
 //  Created by Rob Jonson on 30/11/2018.
 //
 
-import Cocoa
+
 
 #if canImport(AppKit)
+
+import AppKit
 
 open class HoverView: NSView {
 
