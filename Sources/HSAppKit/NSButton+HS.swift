@@ -9,6 +9,7 @@
 
 import Foundation
 import AppKit
+import HSHelpers
 
 public extension NSButton {
     var isOn:Bool {

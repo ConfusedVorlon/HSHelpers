@@ -9,6 +9,7 @@
 #if canImport(AppKit)
 
 import AppKit
+import HSHelpers
 
 public extension NSWindow {
     var isFullscreen:Bool {

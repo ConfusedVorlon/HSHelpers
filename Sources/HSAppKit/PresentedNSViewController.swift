@@ -7,26 +7,26 @@
 
 #if canImport(AppKit)
 
-import Cocoa
+import AppKit
 
-class PresentedNSViewController: NSViewController {
-    var presented:(()->Void)?
-    var dismissed:(()->Void)?
+open class PresentedNSViewController: NSViewController {
+    private var presented:(()->Void)?
+    private var dismissed:(()->Void)?
     
-    func presentAsSheet(from:NSViewController, presented:(()->Void)? = nil,dismissed:(()->Void)? = nil ) {
+    open func presentAsSheet(from:NSViewController, presented:(()->Void)? = nil,dismissed:(()->Void)? = nil ) {
         self.presented = presented
         self.dismissed = dismissed
         
         from.presentAsSheet(self)
     }
     
-    override func viewDidAppear() {
+    open override func viewDidAppear() {
         super.viewDidAppear()
         presented?()
         presented = nil
     }
 
-    override func viewDidDisappear() {
+    open override func viewDidDisappear() {
         super.viewDidDisappear()
         dismissed?()
         dismissed = nil

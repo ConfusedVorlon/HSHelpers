@@ -10,6 +10,12 @@ let package = Package(
         .library(
             name: "HSHelpers",
             targets: ["HSHelpers"]),
+        .library(
+            name: "HSAppKit",
+            targets: ["HSAppKit"]),
+        .library(
+            name: "HSUIKit",
+            targets: ["HSAppKit"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,6 +27,12 @@ let package = Package(
         .target(
             name: "HSHelpers",
             dependencies: []),
+        .target(
+            name: "HSAppKit",
+            dependencies: ["HSHelpers"]),
+        .target(
+            name: "HSUIKit",
+            dependencies: ["HSHelpers"]),
         .testTarget(
             name: "HSHelpersTests",
             dependencies: ["HSHelpers"]),
