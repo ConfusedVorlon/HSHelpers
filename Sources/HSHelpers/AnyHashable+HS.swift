@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension AnyHashable {
+public extension AnyHashable {
     var string:String? {
         return self as? String
     }

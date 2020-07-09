@@ -9,7 +9,7 @@
 import Foundation
 import StoreKit
 
-extension SKError {
+public extension SKError {
     var helpfulMessage:String {
         var errorMessage = "Unknown Error"
         switch self.code {
