@@ -25,7 +25,8 @@ public extension SKProduct {
         return priceString
     }
     
-    var localizedPrice: String? {
+    //Clashes with SwiftyStoreKit, so keep it private
+    private var localizedPrice: String? {
         return priceFormatter(locale: priceLocale).string(from: price)
     }
     
