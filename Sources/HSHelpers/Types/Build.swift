@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Build {
-    static let isDebug: Bool = {
+public struct Build {
+    public static let isDebug: Bool = {
         var isDebug = false
         // function with a side effect and Bool return value that we can pass into assert()
         func set(debug: Bool) -> Bool {
