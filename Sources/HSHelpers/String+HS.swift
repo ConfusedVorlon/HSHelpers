@@ -21,7 +21,7 @@ public extension LosslessStringConvertible {
 
 public extension String {
     
-
+    
     //MARK: Type management
     
     init?(ifString object:Any?){
@@ -38,29 +38,8 @@ public extension String {
     }
     
     //MARK: Parts
-        
-    func appending(pathComponent: String) -> String {
     
-        if self.contains("://"){
-            var url = URL(string: self)!
-            let componentParts = pathComponent.components(separatedBy: "?")
-            let pathPart = componentParts.first
- 
-            url = url.appendingPathComponent(pathPart!)
-            var urlString = url.absoluteString
-            if componentParts.count > 1 {
-                urlString = urlString + "?" + componentParts[1]
-            }
-            
-            
-            return urlString
-        }
-        else {
-            let nsSt = self as NSString
-            let appended = nsSt.appendingPathComponent(pathComponent)
-            return appended
-        }
-    }
+    
     
     func deleting(prefix: String) -> String {
         guard self.hasPrefix(prefix) else { return self }
@@ -132,11 +111,11 @@ public extension String {
     var int:Int? {
         return Int(self)
     }
-
+    
     var float:Float? {
         return Float(self)
     }
-
+    
     //MARK: Base 64
     
     func toBase64() -> String? {
@@ -156,6 +135,30 @@ public extension String {
     //MARK: Deprecated file/path methods
     
     @available(*, deprecated, message: "use urls directly")
+    func appending(pathComponent: String) -> String {
+        
+        if self.contains("://"){
+            var url = URL(string: self)!
+            let componentParts = pathComponent.components(separatedBy: "?")
+            let pathPart = componentParts.first
+            
+            url = url.appendingPathComponent(pathPart!)
+            var urlString = url.absoluteString
+            if componentParts.count > 1 {
+                urlString = urlString + "?" + componentParts[1]
+            }
+            
+            
+            return urlString
+        }
+        else {
+            let nsSt = self as NSString
+            let appended = nsSt.appendingPathComponent(pathComponent)
+            return appended
+        }
+    }
+    
+    @available(*, deprecated, message: "use urls directly")
     var pathExtension : String {
         return NSURL(fileURLWithPath: self).pathExtension ?? ""
     }
@@ -170,7 +173,7 @@ public extension String {
         if self == "/" {
             return self
         }
-
+        
         var working = self
         if working.hasSuffix("/"){
             working = String(working.dropLast())
@@ -192,7 +195,7 @@ public extension String {
         }
         
         return slashParts.joined(separator: "/")
-    
+        
     }
     
     @available(*, deprecated, message: "use FileManager.documentsDirectory")

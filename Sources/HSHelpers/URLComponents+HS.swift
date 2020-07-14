@@ -61,4 +61,9 @@ public extension URLComponents {
         self.percentEncodedQuery = self.percentEncodedQuery?
         .replacingOccurrences(of: "+", with: "%2B")
     }
+    
+    mutating func treatUnencodedPlussesAsSpaces() {
+        self.percentEncodedQuery = self.percentEncodedQuery?
+        .replacingOccurrences(of: "+", with: "%20")
+    }
 }
