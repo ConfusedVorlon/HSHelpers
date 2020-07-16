@@ -11,6 +11,9 @@ public extension Result where Success == Void {
     static var success: Result {
         return .success(())
     }
+}
+
+public extension Result {
     
     var isSuccess: Bool {
         guard case .success = self else { return false }
