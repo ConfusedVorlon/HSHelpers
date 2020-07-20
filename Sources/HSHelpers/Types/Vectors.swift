@@ -133,20 +133,20 @@ public func %% <T: Vector>(left: T, right: Vector) -> T {
     return T.init(x: left.x %% right.x , y: left.y %% right.y )
 }
 
-public func + <T: Vector>(left: T, right: CGFloat) -> T {
-    return T.init(x: left.x + right, y: left.y + right)
+public func + <T: Vector>(left: T, right: FloatConvertible) -> T {
+    return T.init(x: left.x + right.cgFloat, y: left.y + right.cgFloat)
 }
 
-public func - <T: Vector>(left: T, right: CGFloat) -> T {
-    return T.init(x: left.x - right, y: left.y - right)
+public func - <T: Vector>(left: T, right: FloatConvertible) -> T {
+    return T.init(x: left.x - right.cgFloat, y: left.y - right.cgFloat)
 }
 
-public func * <T: Vector>(left: T, right: CGFloat) -> T {
-    return T.init(x: left.x * right, y: left.y * right)
+public func * <T: Vector>(left: T, right: FloatConvertible) -> T {
+    return T.init(x: left.x * right.cgFloat, y: left.y * right.cgFloat)
 }
 
-public func / <T: Vector>(left: T, right: CGFloat) -> T {
-    return T.init(x: left.x / right, y: left.y / right)
+public func / <T: Vector>(left: T, right: FloatConvertible) -> T {
+    return T.init(x: left.x / right.cgFloat, y: left.y / right.cgFloat)
 }
 
 public extension Vector {
