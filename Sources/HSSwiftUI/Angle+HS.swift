@@ -13,7 +13,7 @@ import Foundation
 import SwiftUI
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension Angle {
+public extension Angle {
     static func * (lhs: Angle, rhs: Double) -> Angle {
         return Angle(degrees: lhs.degrees * rhs)
     }
