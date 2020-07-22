@@ -13,7 +13,7 @@ import StoreKit
 public extension SKProduct {
     
 
-    @available(OSX 10.13.2, *)
+    @available(OSX 10.13.2, iOS 11.2, *)
     var subscriptionPricingDescription: String? {
         guard let  subscriptionPeriod = self.subscriptionPeriod,
             let localizedPrice = self.localizedPrice else {
@@ -38,7 +38,7 @@ public extension SKProduct {
     }
     
     
-    @available(OSX 10.13.2, *)
+    @available(OSX 10.13.2, iOS 11.2, *)
     var freeTrialPeriod: String? {
         
         guard let introductoryPrice = introductoryPrice else {
@@ -60,7 +60,7 @@ public extension SKProduct {
     
 }
 
-@available(OSX 10.13.2, *)
+@available(OSX 10.13.2, iOS 11.2, *)
 extension SKProduct.PeriodUnit {
     var description:String {
         switch self {

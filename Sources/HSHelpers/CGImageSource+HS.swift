@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreImage
 
 public extension CGImageSource {
     

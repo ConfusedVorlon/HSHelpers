@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 public extension CGRect {
     init(width: Int = 0, height: Int = 0) {
@@ -35,9 +36,11 @@ public extension CGRect {
                            height: left.size.height * right.y)
     }
     
-    var center:NSPoint {
+    var center:CGPoint {
         get {
-            return NSPoint.init(x: NSMidX(self), y: NSMidY(self))
+            //iOS doesn't have NSMidX NSMidY
+            return CGPoint.init(x: origin.x + size.width / 2,
+                                y: origin.y + size.height / 2)
         }
         set {
             origin.x = newValue.x - size.width/2
@@ -45,7 +48,7 @@ public extension CGRect {
         }
     }
     
-    func scaledOnCenter(by scale:CGFloat) -> NSRect {
+    func scaledOnCenter(by scale:CGFloat) -> CGRect {
         let initialCenter = center
         
         var newRect = self
@@ -62,6 +65,7 @@ public extension CGRect {
     }
 }
 
+#if os(macOS)
 public extension Array where Element == CGRect {
     
     /// Bounding rect containing all the rectangles in the array
@@ -78,3 +82,4 @@ public extension Array where Element == CGRect {
         return union
     }
 }
+#endif

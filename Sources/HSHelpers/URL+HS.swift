@@ -12,7 +12,13 @@ public extension URL {
 //#if os(macOS)
     var bookmark:Data? { 
         do {
-            return try self.bookmarkData(options: .withSecurityScope,
+            #if os(macOS)
+            let bookmarkOptions:URL.BookmarkCreationOptions = [.withSecurityScope]
+            #else
+            let bookmarkOptions:URL.BookmarkCreationOptions = []
+            #endif
+            
+            return try self.bookmarkData(options: bookmarkOptions,
                                   includingResourceValuesForKeys: nil, relativeTo: nil)
         } catch (let error) {
             print("error making bookmark: \(error)")
@@ -25,9 +31,15 @@ public extension URL {
             return nil
         }
         
+        #if os(macOS)
+        let bookmarkOptions:URL.BookmarkCreationOptions = [.withSecurityScope]
+        #else
+        let bookmarkOptions:URL.BookmarkCreationOptions = []
+        #endif
+        
         var bookmarkDataIsStale = false
         try? self.init(resolvingBookmarkData: bookmark,
-                                           options: URL.BookmarkResolutionOptions.withSecurityScope,
+                                           options:bookmarkOptions,
                                            relativeTo: nil,
                                            bookmarkDataIsStale: &bookmarkDataIsStale)
         if bookmarkDataIsStale {
