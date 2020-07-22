@@ -13,7 +13,7 @@
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
-#if canImport(AppKit)
+#if os(macOS)
 
 import AppKit
 import CoreGraphics

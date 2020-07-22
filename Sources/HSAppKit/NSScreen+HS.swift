@@ -5,8 +5,8 @@
 //  Created by Rob Jonson on 06/12/2018.
 //
 
-#if canImport(AppKit)
 
+#if os(macOS)
 
 import Foundation
 import AppKit

@@ -5,7 +5,8 @@
 //  Created by Rob Jonson on 21/03/2019.
 //
 
-#if canImport(AppKit)
+
+#if os(macOS)
 
 import AppKit
 

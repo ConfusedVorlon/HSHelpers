@@ -6,7 +6,7 @@
 //  Created by Rob Jonson on 14/11/2018.
 //
 
-#if canImport(AppKit)
+#if os(macOS)
 
 import AppKit
 import HSHelpers
