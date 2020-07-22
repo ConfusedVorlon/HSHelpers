@@ -7,7 +7,8 @@
 
 import Foundation
 import CoreGraphics
-
+import ImageIO
+import CoreServices
 
 public extension CGImage {
     

@@ -32,9 +32,9 @@ public extension URL {
         }
         
         #if os(macOS)
-        let bookmarkOptions:URL.BookmarkCreationOptions = [.withSecurityScope]
+        let bookmarkOptions:URL.BookmarkResolutionOptions = [.withSecurityScope]
         #else
-        let bookmarkOptions:URL.BookmarkCreationOptions = []
+        let bookmarkOptions:URL.BookmarkResolutionOptions = []
         #endif
         
         var bookmarkDataIsStale = false
