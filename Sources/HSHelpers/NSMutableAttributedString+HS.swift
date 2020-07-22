@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 #endif
 
-#if os(iOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
     public typealias FontCompat = UIFont
 #elseif os(OSX)
     import AppKit

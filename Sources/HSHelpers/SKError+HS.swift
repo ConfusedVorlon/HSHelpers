@@ -9,6 +9,7 @@
 import Foundation
 import StoreKit
 
+#if !os(watchOS)
 public extension SKError {
     var helpfulMessage:String {
         var errorMessage = "Unknown Error"
@@ -27,5 +28,6 @@ public extension SKError {
         return errorMessage
     }
 }
+#endif
 
 

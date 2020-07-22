@@ -5,6 +5,8 @@
 //  Created by Rob Jonson on 14/07/2020.
 //
 
+#if !os(watchOS)
+
 import Foundation
 
 import XCTest
@@ -40,3 +42,5 @@ final class StringTests: XCTestCase {
     }
 
 }
+
+#endif

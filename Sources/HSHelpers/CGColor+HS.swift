@@ -7,7 +7,7 @@
 
 
 
-#if os(iOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
 import Foundation
 import CoreGraphics
 import UIKit

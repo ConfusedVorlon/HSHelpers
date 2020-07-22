@@ -5,6 +5,7 @@
 //  Created by Rob Jonson on 14/07/2020.
 //
 
+#if !os(watchOS)
 import XCTest
 @testable import HSHelpers
 
@@ -23,3 +24,4 @@ final class URLComponentsTests: XCTestCase {
     
 
 }
+#endif

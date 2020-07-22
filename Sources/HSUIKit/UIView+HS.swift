@@ -6,6 +6,7 @@
 //  Copyright © 2016 HobbyistSoftware. All rights reserved.
 //
 
+#if !os(watchOS)
 #if canImport(UIKit)
 
 import Foundation
@@ -116,4 +117,5 @@ extension UIView {
     }
 }
 
+#endif
 #endif
