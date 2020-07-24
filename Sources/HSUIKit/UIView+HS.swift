@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     func border(width: CGFloat = 1.0, colour: UIColor) -> Void {
         self.layer.borderWidth = width
