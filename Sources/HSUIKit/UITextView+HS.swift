@@ -11,6 +11,7 @@
 
 import Foundation
 import UIKit
+import HSHelpers
 
 public extension UITextView {
     @discardableResult
