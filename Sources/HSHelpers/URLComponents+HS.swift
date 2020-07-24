@@ -62,11 +62,18 @@ public extension URLComponents {
         self.host = host
         self.port = port
         
-        var path = path
-        if !path?.hasPrefix("/") {
-            path = "/"+path
+        
+        guard var path = path, path.count > 0 else {
+            //empty string or nil
+            return
         }
-        self.path = path ?? ""
+
+        if  !path.hasPrefix("/") {
+            path = "/"+path
+            
+        }
+        
+        self.path = path
     }
     
     //https://stackoverflow.com/questions/43052657/encode-using-urlcomponents-in-swift
