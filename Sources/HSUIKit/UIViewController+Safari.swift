@@ -17,7 +17,7 @@ public protocol CanShowSafari {
 }
 
 
-extension CanShowSafari where Self: UIViewController {
+public extension CanShowSafari where Self: UIViewController {
     
     @available(iOS 10.0, *)
     func openSafari(url:URL,tint:UIColor? = nil) {
