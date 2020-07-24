@@ -56,11 +56,16 @@ public extension URLComponents {
         }
     }
     
-    init(scheme:String = "http", host:String,port:Int?,path:String?) {
+    init(scheme:String = "http",host:String,port:Int?,path:String?) {
         self.init()
         self.scheme = scheme
         self.host = host
         self.port = port
+        
+        var path = path
+        if !path?.hasPrefix("/") {
+            path = "/"+path
+        }
         self.path = path ?? ""
     }
     
