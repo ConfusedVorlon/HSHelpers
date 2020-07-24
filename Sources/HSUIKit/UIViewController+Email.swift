@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 import MessageUI
 
-public public struct EmailAttachment {
+public struct EmailAttachment {
     let data:Data
     let mimeType:String
     let fileName:String
