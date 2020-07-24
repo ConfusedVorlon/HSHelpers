@@ -56,6 +56,14 @@ public extension URLComponents {
         }
     }
     
+    init(scheme:String = "http", host:String,port:Int?,path:String?) {
+        self.init()
+        self.scheme = scheme
+        self.host = host
+        self.port = port
+        self.path = path ?? ""
+    }
+    
     //https://stackoverflow.com/questions/43052657/encode-using-urlcomponents-in-swift
     mutating func encodePlusses() {
         self.percentEncodedQuery = self.percentEncodedQuery?
