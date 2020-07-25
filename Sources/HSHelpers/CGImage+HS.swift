@@ -9,6 +9,10 @@ import Foundation
 import CoreGraphics
 import ImageIO
 import CoreServices
+#if canImport(MobileCoreServices)
+//Defines kUTTypePNG in mobile
+import MobileCoreServices
+#endif
 
 public extension CGImage {
     
