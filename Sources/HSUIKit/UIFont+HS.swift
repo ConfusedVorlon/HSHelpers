@@ -6,8 +6,7 @@
 //  Copyright © 2018 HobbyistSoftware. All rights reserved.
 //
 
-#if !os(watchOS)
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
 
 import Foundation
 import UIKit
@@ -18,5 +17,4 @@ public extension UIFont {
     }
 }
 
-#endif
 #endif

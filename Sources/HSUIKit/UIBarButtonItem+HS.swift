@@ -5,8 +5,8 @@
 //  Created by Rob Jonson on 20/04/2020.
 //
 
-#if !os(watchOS)
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
+
 
 
 import Foundation
@@ -24,5 +24,4 @@ public extension UIBarButtonItem {
 }
 
 
-#endif
 #endif

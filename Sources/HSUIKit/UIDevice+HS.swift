@@ -6,10 +6,14 @@
 //  Copyright © 2018 HobbyistSoftware. All rights reserved.
 //
 
+
+#if canImport(UIKit) && !os(watchOS)
+
+
 import Foundation
 import UIKit
 
-extension UIDevice {
+public extension UIDevice {
     
     static var isIpad:Bool = {
         return UIDevice.current.userInterfaceIdiom == .pad
@@ -80,3 +84,4 @@ extension UIDevice {
     
 }
 
+#endif

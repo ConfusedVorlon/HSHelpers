@@ -6,8 +6,8 @@
 //
 
 
-#if !os(watchOS)
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS)
+
 
 import Foundation
 import UIKit
@@ -24,5 +24,4 @@ public extension UIViewController {
     }
 }
 
-#endif
 #endif

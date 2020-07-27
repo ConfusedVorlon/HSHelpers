@@ -5,8 +5,7 @@
 //  Created by Rob Jonson on 09/09/2019.
 //
 
-#if !os(watchOS) && !os(tvOS)
-#if canImport(UIKit)
+#if canImport(UIKit) && !os(watchOS) && !os(tvOS)
 
 
 import Foundation
@@ -137,5 +136,4 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
-#endif
 #endif

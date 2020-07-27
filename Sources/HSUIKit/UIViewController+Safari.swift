@@ -5,8 +5,7 @@
 //  Created by Rob Jonson on 28/03/2020.
 //
 
-#if !os(watchOS) && !os(tvOS)
-#if canImport(UIKit)
+#if !os(watchOS) && !os(tvOS) && canImport(UIKit)
 
 import Foundation
 import SafariServices
@@ -31,5 +30,4 @@ public extension CanShowSafari where Self: UIViewController {
 }
 
 
-#endif
 #endif
