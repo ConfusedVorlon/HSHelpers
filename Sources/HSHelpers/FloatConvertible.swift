@@ -18,7 +18,7 @@ public protocol FloatConvertible {
 
 public extension FloatConvertible {
     var float: Float {get {return Float(double)}}
-    var int: Int {get {return lrint(double - 0.5)}}
+    var int: Int {get {return lrint(floor(double))}}
     var cgFloat: CGFloat {
         return CGFloat(double)
     }
