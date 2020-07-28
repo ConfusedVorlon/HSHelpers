@@ -141,6 +141,6 @@ public extension FileManager {
     
     class func uniqueFileURL(fromBase base: URL) -> URL {
         let incrementedPath = uniquePath(fromBase: base.path)
-        return URL(string: incrementedPath)!
+        return URL(fileURLWithPath: incrementedPath)!
     }
 }
