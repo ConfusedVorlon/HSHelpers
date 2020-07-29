@@ -13,9 +13,9 @@ import UIKit
 import MessageUI
 
 public struct EmailAttachment {
-    let data:Data
-    let mimeType:String
-    let fileName:String
+    public let data:Data
+    public let mimeType:String
+    public let fileName:String
 }
 
 public protocol CanSendEmail:MFMailComposeViewControllerDelegate {
