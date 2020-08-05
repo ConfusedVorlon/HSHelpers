@@ -10,9 +10,7 @@
 import Foundation
 import SafariServices
 
-@objc
 public protocol CanShowSafari {
-    @objc
     func openSafari(url:URL,tint:UIColor?)
 }
 
