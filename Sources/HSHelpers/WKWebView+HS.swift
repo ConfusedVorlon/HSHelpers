@@ -6,10 +6,12 @@
 //  Copyright © 2018 HobbyistSoftware. All rights reserved.
 //
 
+#if !os(watchOS) && !os(tvOS)
+
 import Foundation
 import WebKit
 
-extension WKWebView {
+public extension WKWebView {
     
     
     /// Load an address
@@ -21,3 +23,5 @@ extension WKWebView {
         self.load(myRequest)
     }
 }
+
+#endif
