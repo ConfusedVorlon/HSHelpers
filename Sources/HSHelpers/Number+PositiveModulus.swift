@@ -10,16 +10,16 @@ import CoreGraphics
 
 infix operator %%
 
-public extension Float {
+public extension FloatConvertible {
     
     /// Returns modulus, but forces it to be positive
     /// - Parameters:
     ///   - left: number
     ///   - right: modulus
     /// - Returns: positive modulus
-    static  func %% (_ left: Float, _ right: Float) -> Float {
-        let truncatingRemainder = left.truncatingRemainder(dividingBy: right)
-        return truncatingRemainder >= 0 ? truncatingRemainder : truncatingRemainder+abs(right)
+    static  func %% (_ left: FloatConvertible, _ right: FloatConvertible) -> Float {
+        let truncatingRemainder:Float = left.float.truncatingRemainder(dividingBy: right.float)
+        return truncatingRemainder >= 0 ? truncatingRemainder : truncatingRemainder+abs(right.float)
     }
 }
 
