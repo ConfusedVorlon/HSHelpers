@@ -24,6 +24,10 @@ public extension Array where Element: Equatable {
             remove(at: index)
         }
     }
+    
+    mutating func remove(elements: [Element]) {
+        self.removeAll { elements.contains($0) }
+    }
 }
 
 public extension Array where Element : Hashable {

@@ -1,6 +1,8 @@
 //From
 //https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
 
+#if canImport(UIKit)
+
 import UIKit
 
 
@@ -151,3 +153,5 @@ import UIKit
         return UIColor(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9686274509803922, alpha: 1.0)
     }
 }
+
+#endif
