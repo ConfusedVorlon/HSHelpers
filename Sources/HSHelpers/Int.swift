@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Int {
+public extension Int {
     
     //4.times{print("hello")}
     func times(_ f: () -> ()) {
