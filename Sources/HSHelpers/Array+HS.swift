@@ -102,7 +102,7 @@ public extension Array {
         return self[randomIndex]
     }
 
-    func safeRemoveFirst() -> Element? {
+    mutating func safeRemoveFirst() -> Element? {
         if self.count == 0 {
             return nil
         }
