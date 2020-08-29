@@ -18,7 +18,7 @@ public extension CGImageSource {
 
         if uti == "public.heic" {
             let partCount = CGImageSourceGetCount(self)
-            if partCount >= 8 {
+            if partCount >= 2 {
                 return true
             }
         }
