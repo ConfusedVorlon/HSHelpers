@@ -36,4 +36,17 @@ public extension Result {
         guard case let .failure(error) = self else { return nil }
         return error
     }
+    
+    
+    /// Essentially type coercion where you don't care about the success object
+    var voidResult:Result<Void,Error> {
+        switch self {
+        case .success(_):
+            return .success
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    
+
 }
