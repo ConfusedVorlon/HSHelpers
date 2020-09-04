@@ -17,9 +17,6 @@ let package = Package(
             name: "HSUIKit",
             targets: ["HSUIKit"]),
         .library(
-            name: "HSSwiftUI",
-            targets: ["HSSwiftUI"]),
-        .library(
             name: "HSTime",
             targets: ["HSTime"]),
     ],
@@ -38,9 +35,6 @@ let package = Package(
             dependencies: ["HSHelpers"]),
         .target(
             name: "HSUIKit",
-            dependencies: ["HSHelpers"]),
-        .target(
-            name: "HSSwiftUI",
             dependencies: ["HSHelpers"]),
         .target(
             name: "HSTime",
