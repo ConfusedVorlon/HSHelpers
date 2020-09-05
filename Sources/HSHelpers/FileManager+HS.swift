@@ -90,7 +90,7 @@ public extension FileManager {
         return self.fileIsDirectory(atPath: url.path)
     }
     
-    @available(*, deprecated, message: "Don't use this")
+    @available(*, deprecated, message: "Don't use this, use Data.writeWithIntermediaryDirectories")
     class func save(data: Data, fullFilename: String, createDirectory: Bool = true, allowEmpty: Bool = false ) -> Bool {
 
         

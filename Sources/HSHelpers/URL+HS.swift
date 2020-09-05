@@ -61,6 +61,14 @@ public extension URL {
         return try accessor(self)
     }
     
+    @available(OSX 10.11, *)
+    var directory:URL {
+        if self.hasDirectoryPath {
+            return self
+        }
+        return self.deletingLastPathComponent()
+    }
+    
 //#endif
     
 
