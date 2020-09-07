@@ -25,7 +25,7 @@ public extension Data {
         return String(data: self, encoding: .utf16)
     }
     
-    @available(OSX 10.11, *)
+    @available(iOS 9.0, OSX 10.11, tvOS 9.0, watchOS 2.0, *)
     func writeWithIntermediaryDirectories(to url: URL, options: Data.WritingOptions = []) throws {
         if !url.isFileURL {
             fatalError("writeWithIntermediaryDirectories is for FileURLs")
