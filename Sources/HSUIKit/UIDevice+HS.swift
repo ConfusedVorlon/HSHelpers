@@ -19,6 +19,7 @@ public extension UIDevice {
         return UIDevice.current.userInterfaceIdiom == .pad
     }()
     
+    @available(*, deprecated, message: "Use Build.isDebug")
     static let isDebug: Bool = {
         var isDebug = false
         // function with a side effect and Bool return value that we can pass into assert()

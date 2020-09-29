@@ -31,8 +31,16 @@ public protocol CanSendEmail:MFMailComposeViewControllerDelegate {
 
 public extension CanSendEmail where Self: UIViewController {
     
+    /// Send using mailto
+    /// - Parameters:
+    ///   - to: array of emails
+    ///   - subject: subject
+    ///   - body: body
+    ///   - isHtml: _extremely_ simple html support!
+    ///   - attachments: attachments will cause this to fail. They're here to match the system-based call
+    /// - Returns: success
     @available(iOS 10.0, *)
-    func sendByURL(to:[String],subject:String,body:String, isHtml:Bool,attachments:[EmailAttachment]) -> Bool {
+    func sendByURL(to:[String],subject:String,body:String, isHtml:Bool,attachments:[EmailAttachment] = []) -> Bool {
         
         if attachments.count != 0 {
             return false
@@ -47,14 +55,14 @@ public extension CanSendEmail where Self: UIViewController {
                 return false
             }
         }
-
+        
         let toJoined = to.joined(separator: ",")
         guard var feedbackUrl = URLComponents.init(string: "mailto:\(toJoined)") else {
             return false
         }
-            
-            
-
+        
+        
+        
         var queryItems: [URLQueryItem] = []
         queryItems.append(URLQueryItem.init(name: "SUBJECT", value: subject))
         queryItems.append(URLQueryItem.init(name: "BODY",
@@ -62,16 +70,24 @@ public extension CanSendEmail where Self: UIViewController {
         feedbackUrl.queryItems = queryItems
         
         if let url = feedbackUrl.url {
-            if UIApplication.shared.canOpenURL(url){
-                UIApplication.shared.open(url)
-                return true
-            }
+            //don't bother checking if we can open it.
+            //that requires us to set LSApplicationQueries
+            //even with no mail app and no default handler, opening mailto simply prompts to install mail app
+            UIApplication.shared.open(url)
+            return true
         }
         
         return false
-     
+        
     }
     
+    /// Send email with system dialog if available, then with mailto
+    /// - Parameters:
+    ///   - to: array of emails
+    ///   - subject: subject
+    ///   - body: body
+    ///   - isHtml: _extremely_ simple html support!
+    ///   - attachments: attachments only work with the system email
     func sendEmail(to:[String],subject:String,body:String, isHtml:Bool = false,attachments:[EmailAttachment]) {
         
         if MFMailComposeViewController.canSendMail() {
@@ -90,22 +106,20 @@ public extension CanSendEmail where Self: UIViewController {
             
             present(mail, animated: true)
         } else {
-            #if targetEnvironment(macCatalyst)
-            let ableToSendByURL = sendByURL(to: to,
+            
+            var ableToSendByURL = false
+            if #available(iOS 10.0, *) {
+                ableToSendByURL = sendByURL(to: to,
                                             subject: subject,
                                             body: body,
                                             isHtml: isHtml,
                                             attachments: attachments)
-            #else
-            let ableToSendByURL = false
-            #endif
-
-            if !ableToSendByURL {
-                self.showAlert(title: "Doh! - Unable to send email", message: "Please check that the mail app is setup properly")
             }
             
-            
-            // show failure alert
+            if !ableToSendByURL {
+                self.showAlert(title: "Doh! - Unable to send email",
+                               message: "Please check that you have installed Apple's Mail app and configured it with your account")
+            }
         }
     }
     
