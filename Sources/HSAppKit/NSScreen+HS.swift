@@ -45,6 +45,33 @@ public extension NSScreen {
         let displayIdKey = NSDeviceDescriptionKey.init("NSScreenNumber")
         return description[displayIdKey] as? CGDirectDisplayID
     }
+    
+    var deviceName:String? {
+        guard let displayID = displayID else {
+            return nil
+        }
+
+        guard let ioServicePort = displayID.getIOService() else  {
+            print("can't get valid service for \(displayID).")
+            return nil
+        }
+        
+        defer {
+            IOObjectRelease(ioServicePort)
+        }
+
+        guard let info = IODisplayCreateInfoDictionary(ioServicePort, UInt32(kIODisplayOnlyPreferredName)).takeRetainedValue() as? [String: AnyObject] else {
+            print("IODisplayCreateInfoDictionary unexpected format")
+            return nil
+        }
+
+        if let productName = info["DisplayProductName"] as? [String: String],
+            let firstKey = Array(productName.keys).first {
+            return productName[firstKey]!
+        }
+
+        return nil
+    }
 }
 
 
