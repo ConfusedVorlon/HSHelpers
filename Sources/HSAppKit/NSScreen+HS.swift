@@ -72,6 +72,21 @@ public extension NSScreen {
 
         return nil
     }
+    
+    var serialNumber:UInt32? {
+        guard let displayID = displayID else {
+            return nil
+        }
+        
+        let serial = CGDisplaySerialNumber(displayID)
+        
+        //see docs for CGDisplaySerialNumber
+        if serial == 0 || serial == 0xFFFFFFFF{
+            return nil
+        }
+
+        return serial
+    }
 }
 
 
