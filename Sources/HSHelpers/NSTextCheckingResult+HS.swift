@@ -6,7 +6,7 @@
 import Foundation
 
 
-extension NSTextCheckingResult {
+public extension NSTextCheckingResult {
    
     /// Returns groups in regex result
     /// - Parameter testedString: the original source
