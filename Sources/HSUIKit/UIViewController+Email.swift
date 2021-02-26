@@ -91,20 +91,22 @@ public extension CanSendEmail where Self: UIViewController {
     func sendEmail(to:[String],subject:String,body:String, isHtml:Bool = false,attachments:[EmailAttachment]) {
         
         if MFMailComposeViewController.canSendMail() {
-            
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(to)
-            mail.setMessageBody(body, isHTML: isHtml)
-            mail.setSubject(subject)
-            
-            for attachment in attachments {
-                mail.addAttachmentData(attachment.data,
-                                       mimeType: attachment.mimeType,
-                                       fileName: attachment.fileName)
+            let vcHolder = VCDelegateForMFMailComposeViewController(viewController: self)
+            withExtendedLifetime(vcHolder) {
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = vcHolder
+                mail.setToRecipients(to)
+                mail.setMessageBody(body, isHTML: isHtml)
+                mail.setSubject(subject)
+                
+                for attachment in attachments {
+                    mail.addAttachmentData(attachment.data,
+                                           mimeType: attachment.mimeType,
+                                           fileName: attachment.fileName)
+                }
+                
+                present(mail, animated: true)
             }
-            
-            present(mail, animated: true)
         } else {
             
             var ableToSendByURL = false
@@ -132,8 +134,14 @@ public extension CanSendEmail where Self: UIViewController {
     }
 }
 
-//Annoyingly, this can't be in the extension as it needs to be an @ObjC method
-extension UIViewController: MFMailComposeViewControllerDelegate {
+private class VCDelegateForMFMailComposeViewController:NSObject, MFMailComposeViewControllerDelegate {
+    var viewController:UIViewController
+ 
+    init(viewController aVC:UIViewController){
+        viewController = aVC
+        super.init()
+    }
+    
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
         case MFMailComposeResult.cancelled:
@@ -152,8 +160,11 @@ extension UIViewController: MFMailComposeViewControllerDelegate {
             break
         }
         
-        controller.dismiss(animated: true, completion: nil)
+        viewController.dismiss(animated: true, completion: nil)
     }
+
 }
+
+
 
 #endif
