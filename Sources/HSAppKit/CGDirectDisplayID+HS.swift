@@ -5,8 +5,10 @@
 //  Created by Rob Jonson on 24/11/2020.
 //
 
-import Foundation
+#if os(macOS)
 
+import Foundation
+import CoreGraphics
 
 extension CGDirectDisplayID {
     
@@ -65,3 +67,5 @@ extension CGDirectDisplayID {
         return ioServ
     }
 }
+
+#endif
