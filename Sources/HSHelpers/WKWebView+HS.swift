@@ -18,8 +18,16 @@ public extension WKWebView {
     ///
     /// - Parameter address: web address
     func load(address:String){
-        let myURL = URL(string: address)
-        let myRequest = URLRequest(url: myURL!)
+        if let myURL = URL(string: address) {
+            self.load(url:myURL)
+        }
+    }
+    
+    /// Load a url
+    ///
+    /// - Parameter address: web url
+    func load(url:URL){
+        let myRequest = URLRequest(url: url)
         self.load(myRequest)
     }
 }
