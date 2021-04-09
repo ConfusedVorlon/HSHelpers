@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+@objc
 public extension UIAlertController {
     func present(from viewController: UIViewController,
                    barButtonItem:UIBarButtonItem,
