@@ -91,10 +91,9 @@ public extension CanSendEmail where Self: UIViewController {
     func sendEmail(to:[String],subject:String,body:String, isHtml:Bool = false,attachments:[EmailAttachment]) {
         
         if MFMailComposeViewController.canSendMail() {
-            let vcHolder = VCDelegateForMFMailComposeViewController(viewController: self)
-            withExtendedLifetime(vcHolder) {
-                let mail = MFMailComposeViewController()
-                mail.mailComposeDelegate = vcHolder
+
+                let mail = MFMailComposeViewControllerwDelegate()
+                mail.mailComposeDelegate = mail
                 mail.setToRecipients(to)
                 mail.setMessageBody(body, isHTML: isHtml)
                 mail.setSubject(subject)
@@ -106,7 +105,7 @@ public extension CanSendEmail where Self: UIViewController {
                 }
                 
                 present(mail, animated: true)
-            }
+
         } else {
             
             var ableToSendByURL = false
@@ -117,7 +116,7 @@ public extension CanSendEmail where Self: UIViewController {
                                             isHtml: isHtml,
                                             attachments: attachments)
             }
-            
+
             if !ableToSendByURL {
                 self.showAlert(title: "Doh! - Unable to send email",
                                message: "Please check that you have installed Apple's Mail app and configured it with your account")
@@ -134,14 +133,10 @@ public extension CanSendEmail where Self: UIViewController {
     }
 }
 
-private class VCDelegateForMFMailComposeViewController:NSObject, MFMailComposeViewControllerDelegate {
-    var viewController:UIViewController
- 
-    init(viewController aVC:UIViewController){
-        viewController = aVC
-        super.init()
-    }
-    
+//Delegate isn't always called (e.g. VC can be dismissed by tapping outside form in iPad)
+//using subclass rather than delegate object means there isn't a stranded delegate
+//delegate is weak - so no self-retain issue
+fileprivate class MFMailComposeViewControllerwDelegate:MFMailComposeViewController,MFMailComposeViewControllerDelegate {
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
         case MFMailComposeResult.cancelled:
@@ -160,11 +155,9 @@ private class VCDelegateForMFMailComposeViewController:NSObject, MFMailComposeVi
             break
         }
         
-        viewController.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
-
 }
-
 
 
 #endif
