@@ -13,17 +13,26 @@ import UIKit
 @objc
 public extension UIAlertController {
     func present(from viewController: UIViewController,
-                   barButtonItem:UIBarButtonItem,
+                   barButtonItem:UIBarButtonItem?,
                    permittedArrowDirections:UIPopoverArrowDirection = [],
                    completion: (() -> Void)? = nil){
         
         if preferredStyle == .actionSheet, let popoverController = popoverPresentationController {
-            popoverController.barButtonItem = barButtonItem
+            if let barButtonItem = barButtonItem {
+                popoverController.barButtonItem = barButtonItem
+            }
+            else {
+                popoverController.sourceView = viewController.view
+                popoverController.sourceRect = viewController.view.bounds
+            }
+            
             popoverController.permittedArrowDirections = permittedArrowDirections
         }
 
         viewController.present(self, animated: true,completion: completion)
     }
+    
+
     
     func addAction(title:String,style:UIAlertAction.Style = .default,action:(()->Void)? = nil) {
         let action = UIAlertAction(title: title, style: style) {
