@@ -23,6 +23,8 @@ public class ThreadsafeDict<Key:Hashable,Value>{
                               attributes: .concurrent)
     }
     
+
+    
     public var unsafeContents:[Key:Value] {
         get {
             var result:[Key:Value]?
@@ -65,3 +67,17 @@ public class ThreadsafeDict<Key:Hashable,Value>{
     }
 }
 
+extension ThreadsafeDict:Encodable where Key:Encodable,Value:Encodable {
+    public func encode(to encoder: Encoder) throws {
+        try self.unsafeContents.encode(to:encoder)
+    }
+}
+
+//can't add decodable conformance because Swift won't have it
+//https://forums.swift.org/t/can-i-really-not-add-decodeable-conformance-in-an-extension/50668
+//extension ThreadsafeDict:Decodable where Key:Decodable,Value:Decodable {
+//    public init(from decoder: Decoder) throws {
+//        let dict = try Dictionary<Key,Value>.init(from: decoder)
+//        self.init(dict)
+//    }
+//}
