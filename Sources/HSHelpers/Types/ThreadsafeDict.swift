@@ -13,17 +13,20 @@ import Foundation
 public class ThreadsafeDict<Key:Hashable,Value>{
     
     private var dict:[Key:Value]
-    private let queue:DispatchQueue
+    private let queue:DispatchQueue = DispatchQueue(label: "com.hobbyistsoftware.threadsafe.dict",
+                                                   qos: DispatchQoS.userInitiated,
+                                                   attributes: .concurrent)
  
     public init(_ newDict:[Key:Value]) {
         dict = newDict
-        
-        queue = DispatchQueue(label: "com.hobbyistsoftware.threadsafe.dict",
-                              qos: DispatchQoS.userInitiated,
-                              attributes: .concurrent)
     }
     
-
+    //if key/value are decodable, provide decodable initialiser
+    required public init(from decoder: Decoder) throws
+      where Key: Decodable, Value: Decodable
+    {
+      dict = try Dictionary<Key,Value>.init(from: decoder)
+    }
     
     public var unsafeContents:[Key:Value] {
         get {
@@ -73,11 +76,6 @@ extension ThreadsafeDict:Encodable where Key:Encodable,Value:Encodable {
     }
 }
 
-//can't add decodable conformance because Swift won't have it
-//https://forums.swift.org/t/can-i-really-not-add-decodeable-conformance-in-an-extension/50668
-//extension ThreadsafeDict:Decodable where Key:Decodable,Value:Decodable {
-//    public init(from decoder: Decoder) throws {
-//        let dict = try Dictionary<Key,Value>.init(from: decoder)
-//        self.init(dict)
-//    }
-//}
+extension ThreadsafeDict:Decodable where Key:Decodable,Value:Decodable {
+
+}

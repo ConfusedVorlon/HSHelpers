@@ -21,6 +21,13 @@ public class ThreadsafeArray<Value>{
         array = newArray
     }
     
+    //if value is decodable, provide decodable initialiser
+    required public init(from decoder: Decoder) throws
+      where Value: Decodable
+    {
+        array = try Array<Value>.init(from: decoder)
+    }
+    
     public var unsafeContents:[Value] {
         get {
             var result:[Value]?
@@ -54,3 +61,12 @@ public class ThreadsafeArray<Value>{
     
 }
 
+extension ThreadsafeArray:Encodable where Value:Encodable {
+    public func encode(to encoder: Encoder) throws {
+        try self.unsafeContents.encode(to:encoder)
+    }
+}
+
+extension ThreadsafeArray:Decodable where Value:Decodable {
+
+}
