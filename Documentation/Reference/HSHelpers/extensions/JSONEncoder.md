@@ -1,0 +1,6 @@
+**EXTENSION**
+
+# `JSONEncoder`
+
+## Methods
+### `pretty()`

@@ -1,0 +1,6 @@
+**EXTENSION**
+
+# `NSViewController`
+
+## Methods
+### `dismissSheet()`

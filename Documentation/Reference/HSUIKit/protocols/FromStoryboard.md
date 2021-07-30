@@ -1,0 +1,6 @@
+**PROTOCOL**
+
+# `FromStoryboard`
+
+## Methods
+### `fromStoryboard()`

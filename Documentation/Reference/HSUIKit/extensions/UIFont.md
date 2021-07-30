@@ -1,0 +1,6 @@
+**EXTENSION**
+
+# `UIFont`
+
+## Methods
+### `boldFont()`

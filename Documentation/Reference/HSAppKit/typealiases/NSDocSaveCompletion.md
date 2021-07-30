@@ -1,0 +1,3 @@
+**TYPEALIAS**
+
+# `NSDocSaveCompletion`
