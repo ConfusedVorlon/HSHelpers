@@ -48,8 +48,13 @@ public extension String {
     }
     
     //MARK: Parts
+    //MARK: Capitalisation
     
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
     
+    //MARK: Parts
     
     func deleting(prefix: String) -> String {
         guard self.hasPrefix(prefix) else { return self }
