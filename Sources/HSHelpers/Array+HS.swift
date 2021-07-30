@@ -56,57 +56,5 @@ public extension Collection where Self.Index == Int {
     }
 }
 
-//These are now in the OptionalType file so that it does't have to be included when not needed
-//func removeNils() -> [Iterator.Element.Wrapped]
-//var nonNilCount:Int
 
-//Shuffle seems to be in the standard library
-////https://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift
-//extension MutableCollection {
-//    /// Shuffles the contents of this collection.
-//    mutating func shuffle() {
-//        let c = count
-//        guard c > 1 else { return }
-//
-//        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
-//            let d: Int = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
-//            let i = index(firstUnshuffled, offsetBy: d)
-//            swapAt(firstUnshuffled, i)
-//        }
-//    }
-//}
-
-//MARK: Shuffling
-
-public extension Sequence {
-    /// Returns an array with the contents of this sequence, shuffled.
-    func shuffled() -> [Element] {
-        var result = Array(self)
-        result.shuffle()
-        return result
-    }
-}
-
-
-public extension Array {
-    /// Returns an array with the contents of this sequence, shuffled.
-    func shuffled() -> [Iterator.Element] {
-        var result = Array(self)
-        result.shuffle()
-        return result
-    }
-    
-    @available(*, deprecated, message: "use randomElement()")
-    func randomItem() -> Iterator.Element {
-        let randomIndex = Int(arc4random_uniform(UInt32(self.count)))
-        return self[randomIndex]
-    }
-
-    mutating func safeRemoveFirst() -> Element? {
-        if self.count == 0 {
-            return nil
-        }
-        return self.removeFirst()
-    }
-}
 
