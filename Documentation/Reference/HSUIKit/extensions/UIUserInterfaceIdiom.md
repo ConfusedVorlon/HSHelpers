@@ -1,6 +1,0 @@
-**EXTENSION**
-
-# `UIUserInterfaceIdiom`
-
-## Properties
-### `description`

@@ -1,1 +1,0 @@
-### `NSLocalizedString(_:)`

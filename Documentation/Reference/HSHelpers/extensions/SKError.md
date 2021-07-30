@@ -1,6 +1,0 @@
-**EXTENSION**
-
-# `SKError`
-
-## Properties
-### `helpfulMessage`

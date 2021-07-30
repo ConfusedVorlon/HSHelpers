@@ -70,6 +70,8 @@ public extension CGImage {
         }
     }
     
+    /// Png data
+    /// - Returns: png
     func pngData() -> Data? {
         autoreleasepool {
             let data = NSMutableData()

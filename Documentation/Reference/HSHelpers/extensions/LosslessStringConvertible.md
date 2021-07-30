@@ -1,6 +1,0 @@
-**EXTENSION**
-
-# `LosslessStringConvertible`
-
-## Properties
-### `string`

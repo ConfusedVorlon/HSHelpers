@@ -1,6 +1,0 @@
-**EXTENSION**
-
-# `UIBarButtonItem`
-
-## Properties
-### `frame`

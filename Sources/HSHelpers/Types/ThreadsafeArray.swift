@@ -7,9 +7,8 @@
 
 import Foundation
 
-/// Only one writer at a time - but asynchronous (flags: .barrier)
-/// Multiple readers at a time
-/// All queue items run in the order they are enqueued - so all writes will complete before a read runs
+/// Threadsafe array using reader/writer pattern
+/// Codeable/Decodable if the contained type is
 public class ThreadsafeArray<Value>{
     
     private var array:[Value]
@@ -17,17 +16,20 @@ public class ThreadsafeArray<Value>{
                                       qos: DispatchQoS.userInitiated,
                                       attributes: .concurrent)
     
+    /// Init
+    /// - Parameter newArray: Initial Array
     public init(_ newArray:[Value]) {
         array = newArray
     }
     
-    //if value is decodable, provide decodable initialiser
+    ///if value is decodable, provide decodable initialiser
     required public init(from decoder: Decoder) throws
       where Value: Decodable
     {
         array = try Array<Value>.init(from: decoder)
     }
     
+    /// Return the regular array
     public var unsafeContents:[Value] {
         get {
             var result:[Value]?
@@ -53,6 +55,8 @@ public class ThreadsafeArray<Value>{
         }
     }
     
+    /// Append
+    /// - Parameter newValue: like an array
     public func append(_ newValue:Value){
         queue.async(flags: .barrier) {
             self.array.append(newValue)

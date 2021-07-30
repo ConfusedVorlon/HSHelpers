@@ -9,6 +9,8 @@
 import Foundation
 
 public extension Array where Element == String {
+    /// Sorts using same logic as finder
+    /// - Returns: sorted array
     func sortedFinderwise() -> [String] {
         return self.sorted(by:{ x,y in
             return x.localizedStandardCompare(y) == ComparisonResult.orderedAscending

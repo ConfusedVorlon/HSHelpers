@@ -8,6 +8,9 @@
 import Foundation
 
 public struct Build {
+        
+    /// Returns if current build is built for debug.
+    /// Uses assert to determine this without need for compilation flags
     public static let isDebug: Bool = {
         var isDebug = false
         // function with a side effect and Bool return value that we can pass into assert()

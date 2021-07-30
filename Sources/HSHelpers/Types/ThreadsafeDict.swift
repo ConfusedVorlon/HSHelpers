@@ -7,27 +7,29 @@
 
 import Foundation
 
-/// Only one writer at a time - but asynchronous (flags: .barrier)
-/// Multiple readers at a time
-/// All queue items run in the order they are enqueued - so all writes will complete before a read runs
+/// Threadsafe Dictionary using reader/writer pattern
+/// Codeable/Decodable if the contained types are
 public class ThreadsafeDict<Key:Hashable,Value>{
     
     private var dict:[Key:Value]
     private let queue:DispatchQueue = DispatchQueue(label: "com.hobbyistsoftware.threadsafe.dict",
                                                    qos: DispatchQoS.userInitiated,
                                                    attributes: .concurrent)
- 
+    
+    /// Init
+    /// - Parameter newDict: initial dictionary
     public init(_ newDict:[Key:Value]) {
         dict = newDict
     }
     
-    //if key/value are decodable, provide decodable initialiser
+    /// if key/value are decodable, provide decodable initialiser
     required public init(from decoder: Decoder) throws
       where Key: Decodable, Value: Decodable
     {
       dict = try Dictionary<Key,Value>.init(from: decoder)
     }
     
+    /// Returns regular dict
     public var unsafeContents:[Key:Value] {
         get {
             var result:[Key:Value]?
@@ -53,12 +55,15 @@ public class ThreadsafeDict<Key:Hashable,Value>{
         }
     }
     
+    /// Remove Value
+    /// - Parameter key: key
     public func removeValue(forKey key:Key) {
         queue.async(flags: .barrier) {
             self.dict.removeValue(forKey: key)
         }
     }
     
+    /// Keys
     public var keys: Dictionary<Key, Value>.Keys {
         get {
             var result:Dictionary<Key, Value>.Keys?

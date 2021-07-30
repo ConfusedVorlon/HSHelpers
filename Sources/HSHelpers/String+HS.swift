@@ -32,17 +32,7 @@ public extension StringProtocol {
 public extension String {
     
     
-    //MARK: Type management
-    
-    init?(ifString object:Any?){
-        if let aString = object as? String {
-            self = aString
-        }
-        else {
-            return nil
-        }
-    }
-    
+    /// - Returns: nil if string is empty
     func nilIfEmpty() -> String? {
         return self.isEmpty ? nil : self
     }
@@ -90,6 +80,7 @@ public extension String {
     
     //MARK: Range
     
+    /// Range of complete string
     func fullRange() -> NSRange {
         return NSMakeRange(0, self.count)
     }
@@ -115,17 +106,19 @@ public extension String {
     
     //MARK: Numerics
     
+    /// True if string is an integer
     var isInteger: Bool {
         let intValue = Int(self) ?? 0
         let backToString = String(intValue)
         return (backToString == self)
     }
     
-    //Note "1.2" returns nil
+    ///Cast to int - Note "1.2" returns nil
     var int:Int? {
         return Int(self)
     }
     
+    /// cast to float
     var float:Float? {
         return Float(self)
     }

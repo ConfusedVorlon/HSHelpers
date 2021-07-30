@@ -10,6 +10,11 @@ import Foundation
 import CoreGraphics
 
 public extension CGRect {
+    
+    /// convenience init
+    /// - Parameters:
+    ///   - width: Int
+    ///   - height: Int
     init(width: Int = 0, height: Int = 0) {
         self.init(x:0,y:0,width:width,height:height)
     }
@@ -36,6 +41,7 @@ public extension CGRect {
                            height: left.size.height * right.y)
     }
     
+    /// centrepoint
     var center:CGPoint {
         get {
             //iOS doesn't have NSMidX NSMidY
@@ -48,6 +54,9 @@ public extension CGRect {
         }
     }
     
+    /// Scale rect, keeping centre at the same point
+    /// - Parameter scale: scale
+    /// - Returns: scaled rect
     func scaledOnCenter(by scale:CGFloat) -> CGRect {
         let initialCenter = center
         

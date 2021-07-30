@@ -9,10 +9,11 @@
 import Foundation
 
 
-
+/// Convenience accessors for Bundle
+/// Bundle.main[.version]
 public extension Bundle {
     
-    
+    /// Keys for common properties
     enum Key: String {
         case shortVersionString = "CFBundleShortVersionString",
         version = "CFBundleVersion",
@@ -27,10 +28,12 @@ public extension Bundle {
         }
     }
     
+    /// App Name
     var appName:String? {
         return (self[.displayName] as? String) ?? (self[.name] as? String)
     }
     
+    /// "\(shortVersion) (\(build))"
     var appVersion:String? {
         if let shortVersion = self[.shortVersionString],
             let build = self[.version] {

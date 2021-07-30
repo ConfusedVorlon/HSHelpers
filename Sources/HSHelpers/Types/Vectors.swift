@@ -13,6 +13,9 @@ import CoreGraphics
 /// Allows CGPoint, CGSize and CGVector to be approximately interchangable
 /// You can do maths with mixed types
 /// You can easily convert between them
+/// For example: CGPoint() + CGSize()
+/// or CGSize() * 3
+/// Extends accessors to apply to all types. So - cgPoint.width or cgSize.x are available
 public protocol Vector {
     var x: CGFloat {get set}
     var y: CGFloat {get set}
@@ -128,36 +131,66 @@ public func % <T: Vector>(left: T, right: Vector) -> T {
     return T.init(x: left.x.truncatingRemainder(dividingBy: right.x) , y: left.y.truncatingRemainder(dividingBy: right.y) )
 }
 
-//See Number + PositiveModulus
+
+/// Modulus - but always returns positive value
+/// See Number + PositiveModulus
+/// - Parameters:
+///   - left: base
+///   - right: modulo
+/// - Returns: modulus (in both dimensions separately)
 public func %% <T: Vector>(left: T, right: Vector) -> T {
     return T.init(x: left.x %% right.x , y: left.y %% right.y )
 }
 
+/// (X,Y) + C
+/// - Parameters:
+///   - left: v
+///   - right: const
+/// - Returns: (X+C,Y+C)
 public func + <T: Vector>(left: T, right: FloatConvertible) -> T {
     return T.init(x: left.x + right.cgFloat, y: left.y + right.cgFloat)
 }
 
+/// (X,Y) - C
+/// - Parameters:
+///   - left: v
+///   - right: const
+/// - Returns: (X-C,Y-C)
 public func - <T: Vector>(left: T, right: FloatConvertible) -> T {
     return T.init(x: left.x - right.cgFloat, y: left.y - right.cgFloat)
 }
 
+/// (X,Y) * C
+/// - Parameters:
+///   - left: v
+///   - right: const
+/// - Returns: (X*C,Y*C)
 public func * <T: Vector>(left: T, right: FloatConvertible) -> T {
     return T.init(x: left.x * right.cgFloat, y: left.y * right.cgFloat)
 }
 
+
+/// (X,Y) / C
+/// - Parameters:
+///   - left: v
+///   - right: const
+/// - Returns: (X/C,Y/C)
 public func / <T: Vector>(left: T, right: FloatConvertible) -> T {
     return T.init(x: left.x / right.cgFloat, y: left.y / right.cgFloat)
 }
 
 public extension Vector {
+    /// Cast to cgPoint
     var cgPoint:CGPoint {
         CGPoint.init(x:x,y:y)
     }
     
+    /// Cast to cgSize
     var cgSize:CGSize {
         CGSize.init(width:width,height: height)
     }
     
+    /// cast to cgVector
     var cgVector:CGVector {
         CGVector.init(dx:dx,dy: dy)
     }
