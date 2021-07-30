@@ -12,6 +12,7 @@
 import Foundation
 import UIKit
 
+/// Add this to any UIViewController to let it easily present an Alert
 public extension UIViewController {
 
     func showAlert(title:String?,message:String?,cancelButton:String = "Cancel") {

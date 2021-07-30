@@ -10,6 +10,7 @@
 import Foundation
 import SafariServices
 
+/// Add this to any UIViewController to let it easily present a SFSafariView controller using openSafari(url:)
 public protocol CanShowSafari {
     func openSafari(url:URL,tint:UIColor?)
 }

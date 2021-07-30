@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+//Easily share an item using UIActivityViewController
 public extension UIViewController {
 
     @objc
@@ -33,6 +34,7 @@ public extension UIViewController {
 }
 
 @objc
+/// Item to share Url, UIImage, etc
 public class ShareItem: NSObject, UIActivityItemSource {
     
     private let subject:String

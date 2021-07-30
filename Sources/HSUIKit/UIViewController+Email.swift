@@ -29,6 +29,7 @@ public protocol CanSendEmail:MFMailComposeViewControllerDelegate {
     func sendEmail(to:[String],subject:String,body:String, isHtml:Bool,attachments:[EmailAttachment]);
 }
 
+/// Add this to any UIViewController to let it easily send an email
 public extension CanSendEmail where Self: UIViewController {
     
     /// Send using mailto

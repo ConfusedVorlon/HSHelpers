@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-
+/// Add this to any UIViewController to let it easily present a UIDocumentInteractionController controller using openPreview(...)
 public protocol CanShowPreview {
     func openPreview(url:URL,animated:Bool)
 }

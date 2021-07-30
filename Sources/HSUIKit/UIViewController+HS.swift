@@ -18,8 +18,13 @@ public protocol FromStoryboard: class {
     static func fromStoryboard() -> Self
 }
 
+/// Provide easy way to load UIController from storyboard using convention over configuration
+/// MyViewController.fromStoryboard()
+/// Default (overridable) assumptions are:
+/// storyboard filename is MyViewController.storyboard
+/// storyboardID should be set in the file as MyViewController
+/// file should contain a single view controller whichis set as the initial controller
 public extension FromStoryboard where Self: UIViewController {
-    
     
     /// Load VC from storyboard
     /// Storyboard ID is by default assumed to be the class name
