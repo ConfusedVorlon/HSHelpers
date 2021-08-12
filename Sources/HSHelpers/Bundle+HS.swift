@@ -18,7 +18,8 @@ public extension Bundle {
         case shortVersionString = "CFBundleShortVersionString",
         version = "CFBundleVersion",
         name =  "CFBundleName",
-        displayName = "CFBundleDisplayName"
+        displayName = "CFBundleDisplayName",
+        id = "CFBundleIdentifier"
     }
     
     /// Allows Bundle.main[.version]
