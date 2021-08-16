@@ -71,26 +71,10 @@ public extension NSImage {
         return data
     }
     
-    
-//    func save(toFile saveName: String, inDir saveDir: String? = nil) -> Bool {
-//        guard let imgData: Data = pngRepresentation() else {
-//            return false
-//        }
-//        
-//        var saveName = saveName
-//        if let saveDir = saveDir {
-//            saveName = URL(fileURLWithPath: saveDir).appendingPathComponent(saveName).absoluteString
-//        }
-//        
-//        return FileManager.save(data: imgData, fullFilename: saveName)
-//    }
 
     
     //inspired by http://vocaro.com/trevor/blog/wp-content/uploads/2009/10/UIImage+Resize.m
     func singlePixelImage(with size: NSSize) -> NSImage? {
-//        guard let imageRef = hsCGImage() else {
-//            return nil
-//        }
   
         var proposedRect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
         guard let imageRef = cgImage(forProposedRect: &proposedRect, context: nil, hints: nil) else {
@@ -129,39 +113,9 @@ public extension NSImage {
         return cgImage(forProposedRect: nil, context: nil, hints: nil)
     }
     
-//    var cgImage: CGImage? {
-//        get {
-//            guard let imageData = self.tiffRepresentation else { return nil }
-//            guard let sourceData = CGImageSourceCreateWithData(imageData as CFData, nil) else { return nil }
-//            return CGImageSourceCreateImageAtIndex(sourceData, 0, nil)
-//        }
-//    }
+
     
-//    func bitmapImageRepMatchingImageSize() -> NSBitmapImageRep? {
-//        //create a NSBitmapImageRep
-//        guard let tRepresentation = tiffRepresentation else {
-//            return nil
-//        }
-//        guard var bmpImageRep = NSBitmapImageRep(data: tRepresentation) else {
-//            return nil
-//        }
-//
-//        //add the NSBitmapImage to the representation list of the target
-//        addRepresentation(bmpImageRep)
-//
-//        let pixelSize: NSSize = NSMakeSize(bmpImageRep.pixelsWide.cgFloat, bmpImageRep.pixelsHigh.cgFloat)
-//        if !NSEqualSizes(size, pixelSize) {
-//            let rebuiltImage: NSImage? = singlePixelImage(with: NSMakeSize(size.width, size.height))
-//            if let aRepresentation = rebuiltImage?.tiffRepresentation {
-//                if let newRep = NSBitmapImageRep(data: aRepresentation) {
-//                    bmpImageRep = newRep
-//                }
-//            }
-//        }
-//        return bmpImageRep
-//    }
-    
-    func imageRotatedByDegreess(degrees:CGFloat) -> NSImage {
+    func imageRotatedBy(degrees:CGFloat) -> NSImage {
         
         var imageBounds = NSZeroRect ; imageBounds.size = self.size
         let pathBounds = NSBezierPath(rect: imageBounds)
