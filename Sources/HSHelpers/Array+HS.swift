@@ -8,6 +8,15 @@
 
 import Foundation
 
+public extension Array {
+    mutating func safeRemoveFirst() -> Element? {
+        if self.count == 0 {
+            return nil
+        }
+        return self.removeFirst()
+    }
+}
+
 public extension Array where Element == String {
     /// Sorts using same logic as finder
     /// - Returns: sorted array
@@ -31,12 +40,6 @@ public extension Array where Element: Equatable {
         self.removeAll { elements.contains($0) }
     }
     
-    mutating func safeRemoveFirst() -> Element? {
-        if self.count == 0 {
-            return nil
-        }
-        return self.removeFirst()
-    }
 }
 
 public extension Array where Element : Hashable {
