@@ -30,6 +30,13 @@ public extension Array where Element: Equatable {
     mutating func remove(elements: [Element]) {
         self.removeAll { elements.contains($0) }
     }
+    
+    mutating func safeRemoveFirst() -> Element? {
+        if self.count == 0 {
+            return nil
+        }
+        return self.removeFirst()
+    }
 }
 
 public extension Array where Element : Hashable {
