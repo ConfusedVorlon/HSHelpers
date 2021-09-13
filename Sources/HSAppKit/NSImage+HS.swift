@@ -71,7 +71,39 @@ public extension NSImage {
         return data
     }
     
+    
+    /// Scales image. Aspect ratio is maintained if exactly one of width or height are non-nil
+    /// - Parameters:
+    ///   - width: new width
+    ///   - height: new height
+    /// - Returns: scaled image
+    func scaledTo(width:CGFloat?,height:CGFloat?) -> NSImage? {
+        if size.width == 0 || size.height == 0 {
+            print("Can't scale image with zero dimension")
+            return nil
+        }
+        
+        if let width = width {
+            if let height = height {
+                return singlePixelImage(with: NSSize(width: width, height: height))
+            }
+            else {
+                let newSize = NSSize(width: width, height: size.height * width / size.width)
+                return singlePixelImage(with:newSize)
+            }
+        }
+        else {
+            if let height = height {
+                let newSize = NSSize(width: size.width * height / size.height, height: height)
+                return singlePixelImage(with:newSize)
+            }
+            else {
+                assert(false,"Must provide width or height")
+                return nil
+            }
+        }
 
+    }
     
     //inspired by http://vocaro.com/trevor/blog/wp-content/uploads/2009/10/UIImage+Resize.m
     func singlePixelImage(with size: NSSize) -> NSImage? {
