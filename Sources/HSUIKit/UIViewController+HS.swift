@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 
-public protocol FromStoryboard: class {
+public protocol FromStoryboard: AnyObject {
     static var storyboardFilename:String {get}
     static var storyboardId:String {get}
     static func fromStoryboard() -> Self
