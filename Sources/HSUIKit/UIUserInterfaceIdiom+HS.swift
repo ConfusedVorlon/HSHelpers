@@ -26,6 +26,8 @@ public extension UIUserInterfaceIdiom {
             return "Apple TV"
         case .carPlay:
             return "car"
+        case .mac:
+            return "Mac"
         @unknown default:
             assert(false, "Unknown Device")
             return "device"
