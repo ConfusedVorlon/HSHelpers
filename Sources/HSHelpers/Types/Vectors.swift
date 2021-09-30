@@ -28,7 +28,7 @@ public protocol Vector {
     init(_ vector:Vector)
 
     func floor <T: Vector>() -> T
-    func length() -> CGFloat
+    var length:CGFloat {get}
 }
 
 //As long as each type has x & y, we can generate the others
@@ -79,7 +79,7 @@ public extension Vector {
         return T(x: self.x.rounded(.down), y:self.y.rounded(.down))
     }
     
-    func length() -> CGFloat
+    var length:CGFloat
     {
         return sqrt(self.x * self.x + self.y * self.y)
     }
@@ -197,6 +197,7 @@ public extension Vector {
 }
 
 extension CGSize: Vector {
+
     public init(_ vector:Vector){
         self.init(x: vector.x, y: vector.y)
     }
