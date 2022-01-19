@@ -7,19 +7,6 @@
 
 import Foundation
 
-public extension Array where Element == URLQueryItem {
-    @available(*, deprecated, message: "Use subscript directly on URLComponents")
-    subscript(index: String) -> String? {
-
-        for item in self {
-            if item.name == index {
-                return item.value
-            }
-        }
-
-        return nil
-    }
-}
 
 public extension URLComponents {
 
