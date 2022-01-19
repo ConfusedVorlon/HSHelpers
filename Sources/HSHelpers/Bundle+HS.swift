@@ -8,30 +8,27 @@
 
 import Foundation
 
-
-
 public extension Bundle {
-    
-    
+
     enum Key: String {
         case shortVersionString = "CFBundleShortVersionString",
         version = "CFBundleVersion",
         name =  "CFBundleName",
         displayName = "CFBundleDisplayName"
     }
-    
+
     /// Allows Bundle.main[.version]
     subscript(index: Bundle.Key) ->  Any? {
         get {
             return self.object(forInfoDictionaryKey: index.rawValue)
         }
     }
-    
-    var appName:String? {
+
+    var appName: String? {
         return (self[.displayName] as? String) ?? (self[.name] as? String)
     }
-    
-    var appVersion:String? {
+
+    var appVersion: String? {
         if let shortVersion = self[.shortVersionString],
             let build = self[.version] {
             return "\(shortVersion) (\(build))"

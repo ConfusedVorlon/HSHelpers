@@ -19,7 +19,7 @@ import AppKit
 import CoreGraphics
 
 public extension NSImage {
-    
+
     /// Return a part of the image
     ///
     /// - Parameter rect: rect to return
@@ -28,50 +28,48 @@ public extension NSImage {
         if !rect.isPositive {
             return nil
         }
-        
-        let canvasFrame: NSRect = NSMakeRect(0, 0, rect.size.width, rect.size.height)
+
+        let canvasFrame: NSRect = NSRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height)
         let canvas = NSImage(size: canvasFrame.size)
         canvas.lockFocus()
         draw(in: canvasFrame, from: rect, operation: .copy, fraction: 1, respectFlipped: true, hints: nil)
         canvas.unlockFocus()
         return canvas
     }
-    
+
     func pngRepresentation(size requiredSize: NSSize? = nil) -> Data? {
 
         let newSize = requiredSize ?? size
-        
+
         let sizedImage: NSImage? = singlePixelImage(with: newSize)
-        //create a NSBitmapImageRep
-        var bmpImageRep: NSBitmapImageRep? = nil
+        // create a NSBitmapImageRep
+        var bmpImageRep: NSBitmapImageRep?
         if let aRepresentation = sizedImage?.tiffRepresentation {
             bmpImageRep = NSBitmapImageRep(data: aRepresentation)
         }
-        //get the data from the representation
+        // get the data from the representation
         let data: Data? = bmpImageRep?.representation(using: NSBitmapImageRep.FileType.png, properties: [:])
         return data
     }
-    
-    
+
     func jpegRepresentation(compression: Float = 1.0, size requiredSize: NSSize? = nil) -> Data? {
         let newSize = requiredSize ?? size
-        
+
         let sizedImage: NSImage? = singlePixelImage(with: newSize)
-        //create a NSBitmapImageRep
-        var bmpImageRep: NSBitmapImageRep? = nil
+        // create a NSBitmapImageRep
+        var bmpImageRep: NSBitmapImageRep?
         if let aRepresentation = sizedImage?.tiffRepresentation {
             bmpImageRep = NSBitmapImageRep(data: aRepresentation)
         }
-        let propertyDictionary:[NSBitmapImageRep.PropertyKey : Any] = [.compressionFactor : compression]
-        //get the data from the representation
-        var data: Data? = nil
+        let propertyDictionary: [NSBitmapImageRep.PropertyKey: Any] = [.compressionFactor: compression]
+        // get the data from the representation
+        var data: Data?
 
         data = bmpImageRep?.representation(using: NSBitmapImageRep.FileType.jpeg, properties: propertyDictionary)
 
         return data
     }
-    
-    
+
 //    func save(toFile saveName: String, inDir saveDir: String? = nil) -> Bool {
 //        guard let imgData: Data = pngRepresentation() else {
 //            return false
@@ -85,23 +83,21 @@ public extension NSImage {
 //        return FileManager.save(data: imgData, fullFilename: saveName)
 //    }
 
-    
-    //inspired by http://vocaro.com/trevor/blog/wp-content/uploads/2009/10/UIImage+Resize.m
+    // inspired by http://vocaro.com/trevor/blog/wp-content/uploads/2009/10/UIImage+Resize.m
     func singlePixelImage(with size: NSSize) -> NSImage? {
 //        guard let imageRef = hsCGImage() else {
 //            return nil
 //        }
-  
+
         var proposedRect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
         guard let imageRef = cgImage(forProposedRect: &proposedRect, context: nil, hints: nil) else {
                 return nil
         }
-        
+
         // Build a context that's the same dimensions as the new size
-        //from the docs - The constants for specifying the alpha channel information are declared with the CGImageAlphaInfo type but can be passed to this parameter safely.
+        // from the docs - The constants for specifying the alpha channel information are declared with the CGImageAlphaInfo type but can be passed to this parameter safely.
         let colorSpace = CGColorSpaceCreateDeviceRGB()
 
-        
         guard let context = CGContext(data: nil,
                                 width: size.width.int, height: size.height.int,
                                 bitsPerComponent: imageRef.bitsPerComponent,
@@ -113,8 +109,8 @@ public extension NSImage {
         }
 
         // Draw into the context; this scales the image
-        context.draw(imageRef, in: NSMakeRect(0, 0, size.width, size.height))
-        
+        context.draw(imageRef, in: NSRect(x: 0, y: 0, width: size.width, height: size.height))
+
         // Get the resized image from the context and a UIImage
         guard let newImageRef = context.makeImage() else {
             print("no image returned from context")
@@ -124,11 +120,11 @@ public extension NSImage {
 
         return croppedImage
     }
-    
+
     var cgImage: CGImage? {
         return cgImage(forProposedRect: nil, context: nil, hints: nil)
     }
-    
+
 //    var cgImage: CGImage? {
 //        get {
 //            guard let imageData = self.tiffRepresentation else { return nil }
@@ -136,7 +132,7 @@ public extension NSImage {
 //            return CGImageSourceCreateImageAtIndex(sourceData, 0, nil)
 //        }
 //    }
-    
+
 //    func bitmapImageRepMatchingImageSize() -> NSBitmapImageRep? {
 //        //create a NSBitmapImageRep
 //        guard let tRepresentation = tiffRepresentation else {
@@ -160,37 +156,36 @@ public extension NSImage {
 //        }
 //        return bmpImageRep
 //    }
-    
-    func imageRotatedByDegreess(degrees:CGFloat) -> NSImage {
-        
-        var imageBounds = NSZeroRect ; imageBounds.size = self.size
+
+    func imageRotatedByDegreess(degrees: CGFloat) -> NSImage {
+
+        var imageBounds = NSRect.zero ; imageBounds.size = self.size
         let pathBounds = NSBezierPath(rect: imageBounds)
         var transform = NSAffineTransform()
         transform.rotate(byDegrees: degrees)
         pathBounds.transform(using: transform as AffineTransform)
-        let rotatedBounds:NSRect = NSMakeRect(NSZeroPoint.x, NSZeroPoint.y , self.size.width, self.size.height )
+        let rotatedBounds: NSRect = NSRect(x: NSPoint.zero.x, y: NSPoint.zero.y, width: self.size.width, height: self.size.height)
         let rotatedImage = NSImage(size: rotatedBounds.size)
-        
-        //Center the image within the rotated bounds
-        imageBounds.origin.x = NSMidX(rotatedBounds) - (NSWidth(imageBounds) / 2)
-        imageBounds.origin.y  = NSMidY(rotatedBounds) - (NSHeight(imageBounds) / 2)
-        
+
+        // Center the image within the rotated bounds
+        imageBounds.origin.x = rotatedBounds.midX - (imageBounds.width / 2)
+        imageBounds.origin.y  = rotatedBounds.midY - (imageBounds.height / 2)
+
         // Start a new transform
         transform = NSAffineTransform()
         // Move coordinate system to the center (since we want to rotate around the center)
-        transform.translateX(by: +(NSWidth(rotatedBounds) / 2 ), yBy: +(NSHeight(rotatedBounds) / 2))
+        transform.translateX(by: +(rotatedBounds.width / 2 ), yBy: +(rotatedBounds.height / 2))
         transform.rotate(byDegrees: degrees)
         // Move the coordinate system bak to normal
-        transform.translateX(by: -(NSWidth(rotatedBounds) / 2 ), yBy: -(NSHeight(rotatedBounds) / 2))
+        transform.translateX(by: -(rotatedBounds.width / 2 ), yBy: -(rotatedBounds.height / 2))
         // Draw the original image, rotated, into the new image
         rotatedImage.lockFocus()
         transform.concat()
-        self.draw(in: imageBounds, from: NSZeroRect, operation: NSCompositingOperation.copy, fraction: 1.0)
+        self.draw(in: imageBounds, from: NSRect.zero, operation: NSCompositingOperation.copy, fraction: 1.0)
         rotatedImage.unlockFocus()
-        
+
         return rotatedImage
     }
 }
-
 
 #endif

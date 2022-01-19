@@ -8,7 +8,7 @@
 import Foundation
 import CoreGraphics
 
-//From https://gist.github.com/erica/efc9f1df7a43350cc31b
+// From https://gist.github.com/erica/efc9f1df7a43350cc31b
 public protocol FloatConvertible {
     var double: Double { get }
     var float: Float { get }
@@ -24,7 +24,7 @@ public extension FloatConvertible {
     }
 }
 
-extension CGFloat: FloatConvertible {public var double : Double {return Double(self)}}
-extension Float: FloatConvertible {public var double : Double {return Double(self)}}
-extension Double: FloatConvertible {public var double : Double {return self}}
-extension Int: FloatConvertible {public var double : Double {return Double(self)}}
+extension CGFloat: FloatConvertible {public var double: Double {return Double(self)}}
+extension Float: FloatConvertible {public var double: Double {return Double(self)}}
+extension Double: FloatConvertible {public var double: Double {return self}}
+extension Int: FloatConvertible {public var double: Double {return Double(self)}}

@@ -11,37 +11,34 @@
 import Foundation
 import UIKit
 
-
 public protocol CanShowPreview {
-    func openPreview(url:URL,animated:Bool)
+    func openPreview(url: URL, animated: Bool)
 }
 
-
 public extension CanShowPreview where Self: UIViewController {
-    
 
-    func openPreview(url:URL, animated:Bool = true){
+    func openPreview(url: URL, animated: Bool = true) {
         let preview = UIDocumentInteractionController(url: url)
-        
+
         let vcHolder = VCDelegateForDocumentInteractionPresentation.init(viewController: self)
-        
-        //vcHolder could be deallocated before presentPreview
+
+        // vcHolder could be deallocated before presentPreview
         withExtendedLifetime(vcHolder) {
             preview.delegate = vcHolder
             preview.presentPreview(animated: animated)
         }
     }
-    
+
 }
 
-private class VCDelegateForDocumentInteractionPresentation:NSObject, UIDocumentInteractionControllerDelegate {
-    var viewController:UIViewController
- 
-    init(viewController aVC:UIViewController){
+private class VCDelegateForDocumentInteractionPresentation: NSObject, UIDocumentInteractionControllerDelegate {
+    var viewController: UIViewController
+
+    init(viewController aVC: UIViewController) {
         viewController = aVC
         super.init()
     }
-    
+
     func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
         return viewController
     }

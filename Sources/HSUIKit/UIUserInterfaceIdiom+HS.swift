@@ -5,17 +5,15 @@
 //  Created by Rob Jonson on 24/07/2020.
 //
 
-
 #if canImport(UIKit) && !os(watchOS)
-
 
 import Foundation
 import UIKit
 
 public extension UIUserInterfaceIdiom {
-    var description:String {
+    var description: String {
         switch self {
-            
+
         case .unspecified:
             return "device"
         case .phone:
@@ -34,4 +32,3 @@ public extension UIUserInterfaceIdiom {
 }
 
 #endif
-

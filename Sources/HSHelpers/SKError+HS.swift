@@ -11,7 +11,7 @@ import StoreKit
 
 #if !os(watchOS)
 public extension SKError {
-    var helpfulMessage:String {
+    var helpfulMessage: String {
         var errorMessage = "Unknown Error"
         switch self.code {
         case .unknown: errorMessage = (self as NSError).localizedDescription
@@ -29,5 +29,3 @@ public extension SKError {
     }
 }
 #endif
-
-

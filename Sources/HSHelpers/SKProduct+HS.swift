@@ -6,12 +6,10 @@
 //  Copyright © 2018 HobbyistSoftware. All rights reserved.
 //
 
-
 import StoreKit
 
 @available(watchOS 6.2, *)
 public extension SKProduct {
-    
 
     @available(OSX 10.13.2, iOS 11.2, tvOS 11.2, watchOS 6.2, *)
     var subscriptionPricingDescription: String? {
@@ -19,50 +17,49 @@ public extension SKProduct {
             let localizedPrice = self.localizedPrice else {
                 return nil
         }
-        
+
         let priceString = "\(localizedPrice) per \(subscriptionPeriod.unit.description)"
-        
+
         return priceString
     }
-    
-    //Clashes with SwiftyStoreKit, so keep it private
+
+    // Clashes with SwiftyStoreKit, so keep it private
     private var localizedPrice: String? {
         return priceFormatter(locale: priceLocale).string(from: price)
     }
-    
+
     private func priceFormatter(locale: Locale) -> NumberFormatter {
         let formatter = NumberFormatter()
         formatter.locale = locale
         formatter.numberStyle = .currency
         return formatter
     }
-    
-    
+
     @available(OSX 10.13.2, iOS 11.2, tvOS 11.2, *)
     var freeTrialPeriod: String? {
-        
+
         guard let introductoryPrice = introductoryPrice else {
             return nil
         }
-        if (introductoryPrice.paymentMode != .freeTrial) {
+        if introductoryPrice.paymentMode != .freeTrial {
             return nil
         }
-        
+
         let trialPeriod = introductoryPrice.subscriptionPeriod
-        
+
         var description = "\(trialPeriod.numberOfUnits) \(trialPeriod.unit.description)"
-        if (trialPeriod.numberOfUnits > 1){
+        if trialPeriod.numberOfUnits > 1 {
             description += "s"
         }
-        
+
         return description
     }
-    
+
 }
 
 @available(OSX 10.13.2, iOS 11.2, tvOS 11.2, watchOS 6.2, *)
 extension SKProduct.PeriodUnit {
-    var description:String {
+    var description: String {
         switch self {
         case .day:
             return "day"
@@ -78,6 +75,3 @@ extension SKProduct.PeriodUnit {
         }
     }
 }
-
-
-

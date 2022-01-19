@@ -5,22 +5,21 @@
 //  Created by Rob Jonson on 21/03/2019.
 //
 
-
 #if os(macOS)
 
 import AppKit
 
 open class PresentedNSViewController: NSViewController {
-    private var presented:(()->Void)?
-    private var dismissed:(()->Void)?
-    
-    open func presentAsSheet(from:NSViewController, presented:(()->Void)? = nil,dismissed:(()->Void)? = nil ) {
+    private var presented:(() -> Void)?
+    private var dismissed:(() -> Void)?
+
+    open func presentAsSheet(from: NSViewController, presented:(() -> Void)? = nil, dismissed:(() -> Void)? = nil ) {
         self.presented = presented
         self.dismissed = dismissed
-        
+
         from.presentAsSheet(self)
     }
-    
+
     open override func viewDidAppear() {
         super.viewDidAppear()
         presented?()
@@ -32,7 +31,7 @@ open class PresentedNSViewController: NSViewController {
         dismissed?()
         dismissed = nil
     }
-    
+
 }
 
 #endif

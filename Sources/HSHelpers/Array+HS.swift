@@ -10,34 +10,33 @@ import Foundation
 
 public extension Array where Element == String {
     func sortedFinderwise() -> [String] {
-        return self.sorted(by:{ x,y in
+        return self.sorted(by: { x, y in
             return x.localizedStandardCompare(y) == ComparisonResult.orderedAscending
         })
     }
 }
 
 public extension Array where Element: Equatable {
-    
+
     // Remove first collection element that is equal to the given `object`:
     mutating func remove(element: Element) {
         if let index = firstIndex(of: element) {
             remove(at: index)
         }
     }
-    
+
     mutating func remove(elements: [Element]) {
         self.removeAll { elements.contains($0) }
     }
 }
 
-public extension Array where Element : Hashable {
+public extension Array where Element: Hashable {
     /// Get unique elements of array
     /// - Returns: array
     func unique() -> [Element] {
         return Array(Set(self))
     }
 }
-
 
 public extension Collection {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
@@ -47,22 +46,22 @@ public extension Collection {
 }
 
 public extension Collection where Self.Index == Int {
-    func clipped(toMaxLength maxLength:Int) -> [Element]{
+    func clipped(toMaxLength maxLength: Int) -> [Element] {
         if self.count <= maxLength {
             return self as! [Self.Element]
         }
-        
+
         return Array(self[0..<maxLength])
     }
 }
 
-//These are now in the OptionalType file so that it does't have to be included when not needed
-//func removeNils() -> [Iterator.Element.Wrapped]
-//var nonNilCount:Int
+// These are now in the OptionalType file so that it does't have to be included when not needed
+// func removeNils() -> [Iterator.Element.Wrapped]
+// var nonNilCount:Int
 
-//Shuffle seems to be in the standard library
+// Shuffle seems to be in the standard library
 ////https://stackoverflow.com/questions/24026510/how-do-i-shuffle-an-array-in-swift
-//extension MutableCollection {
+// extension MutableCollection {
 //    /// Shuffles the contents of this collection.
 //    mutating func shuffle() {
 //        let c = count
@@ -74,9 +73,9 @@ public extension Collection where Self.Index == Int {
 //            swapAt(firstUnshuffled, i)
 //        }
 //    }
-//}
+// }
 
-//MARK: Shuffling
+// MARK: Shuffling
 
 public extension Sequence {
     /// Returns an array with the contents of this sequence, shuffled.
@@ -87,7 +86,6 @@ public extension Sequence {
     }
 }
 
-
 public extension Array {
     /// Returns an array with the contents of this sequence, shuffled.
     func shuffled() -> [Iterator.Element] {
@@ -95,7 +93,7 @@ public extension Array {
         result.shuffle()
         return result
     }
-    
+
     @available(*, deprecated, message: "use randomElement()")
     func randomItem() -> Iterator.Element {
         let randomIndex = Int(arc4random_uniform(UInt32(self.count)))
@@ -109,4 +107,3 @@ public extension Array {
         return self.removeFirst()
     }
 }
-

@@ -8,28 +8,27 @@
 
 #if canImport(UIKit) && !os(watchOS)
 
-
 import Foundation
 import UIKit
 
 public extension UILabel {
-    
+
     /// Adjust text to fit the label - allowing for multiline labels
     ///
     /// - Parameters:
     ///   - rect: uses bounds if nil, or skipped
     ///   - maxFont: max font
     ///   - minFontSize: min font
-    func adjustFontSizeToFit(rect:CGRect? = nil ,withMaxFontSize maxFont: CGFloat, minFontSize: CGFloat = 8) {
-        
+    func adjustFontSizeToFit(rect: CGRect? = nil, withMaxFontSize maxFont: CGFloat, minFontSize: CGFloat = 8) {
+
         guard let text = self.text else {
             return
         }
-        
-        let titleSize:CGSize = rect?.size ?? bounds.size
+
+        let titleSize: CGSize = rect?.size ?? bounds.size
         var testFont: UIFont = self.font
-        
-        var i:Int = Int(maxFont)
+
+        var i: Int = Int(maxFont)
         while CGFloat(i) > minFontSize {
             // Set the new font size.
             testFont = self.font.withSize(CGFloat(i))
@@ -39,13 +38,13 @@ public extension UILabel {
              be checked later. */
             let constraintSize = CGSize(width: titleSize.width, height: CGFloat.greatestFiniteMagnitude)
             // This step checks how tall the label would be with the desired font.
-            
+
             let textRect: CGRect = text.boundingRect(with: constraintSize,
                                                      options: .usesLineFragmentOrigin,
                                                      attributes: [NSAttributedString.Key.font: testFont],
                                                      context: nil)
             let labelSize = textRect.size
-            
+
             /* Here is where you use the height requirement!
              Set the value in the if statement to the height of your UILabel
              If the label fits into your required height, it will break the loop
@@ -56,13 +55,12 @@ public extension UILabel {
             i = i - 2
         }
         // You can see what size the function is using by outputting:
-        //NSLog(@"Best size is: %u", i);
+        // NSLog(@"Best size is: %u", i);
         // Set the UILabel's font to the newly adjusted font.
-        
+
         self.font = testFont
     }
-    
+
 }
 
 #endif
-

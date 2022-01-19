@@ -9,11 +9,10 @@
 import Foundation
 
 extension ClosedRange {
-    init(a:Bound,b:Bound) {
+    init(a: Bound, b: Bound) {
         if a<b {
             self.init(uncheckedBounds: (lower: a, upper: b))
-        }
-        else {
+        } else {
             self.init(uncheckedBounds: (lower: b, upper: a))
         }
     }

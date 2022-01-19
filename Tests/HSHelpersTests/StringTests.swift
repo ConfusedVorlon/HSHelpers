@@ -13,27 +13,27 @@ import XCTest
 @testable import HSHelpers
 
 final class StringTests: XCTestCase {
-    
+
     func testTruncate() {
-        
+
         var jerome = "Jérôme Faure"
         jerome.truncate(to: 4)
-        XCTAssertEqual(jerome,"Jérô...")
-        
+        XCTAssertEqual(jerome, "Jérô...")
+
         var exact = "Two"
         exact.truncate(to: 2)
-        XCTAssertEqual(exact,"Tw...")
-        
+        XCTAssertEqual(exact, "Tw...")
+
         exact = "Two"
         exact.truncate(to: 3)
-        XCTAssertEqual(exact,"Two")
-        
+        XCTAssertEqual(exact, "Two")
+
         exact = "Two"
         exact.truncate(to: 4)
-        XCTAssertEqual(exact,"Two")
-        
+        XCTAssertEqual(exact, "Two")
+
     }
-    
+
     func testIsInteger() {
         XCTAssertTrue("125".isInteger)
         XCTAssertFalse("125.11".isInteger)

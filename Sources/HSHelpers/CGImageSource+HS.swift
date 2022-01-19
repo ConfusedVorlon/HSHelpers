@@ -9,10 +9,10 @@ import Foundation
 import ImageIO
 
 public extension CGImageSource {
-    
+
     /// Rough and ready test for dynamic images
-    var isDynamic:Bool {
-        guard let uti:String = (CGImageSourceGetType(self) as String?) else {
+    var isDynamic: Bool {
+        guard let uti: String = (CGImageSourceGetType(self) as String?) else {
             return false
         }
 
@@ -22,7 +22,7 @@ public extension CGImageSource {
                 return true
             }
         }
-        
+
         return false
     }
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 public extension Int {
-    
-    //4.times{print("hello")}
-    func times(_ f: () -> ()) {
+
+    // 4.times{print("hello")}
+    func times(_ f: () -> Void) {
         if self > 0 {
             for _ in 0..<self {
                 f()
@@ -19,8 +19,8 @@ public extension Int {
         }
     }
 
-    //allows 4.times(print("hello")) instead of 4.times{print("hello")}
-    func times(_ f: @autoclosure () -> ()) {
+    // allows 4.times(print("hello")) instead of 4.times{print("hello")}
+    func times(_ f: @autoclosure () -> Void) {
         if self > 0 {
             for _ in 0..<self {
                 f()
@@ -28,4 +28,3 @@ public extension Int {
         }
     }
 }
-
