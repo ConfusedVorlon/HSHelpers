@@ -12,32 +12,30 @@ import AppKit
 import HSHelpers
 
 public extension NSView {
-    
+
     class func autolayout() -> Self {
         let view = self.init()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
 
-    
-    var center:NSPoint {
+    var center: NSPoint {
         get {
             return frame.center
         }
         set {
-            let newOrigin:NSPoint = newValue - (frame.size / 2)
+            let newOrigin: NSPoint = newValue - (frame.size / 2)
             setFrameOrigin(newOrigin)
             needsDisplay = true
         }
-        
+
     }
 
-    
     func bringSubviewToFront(_ view: NSView) {
             var theView = view
-            self.sortSubviews({(viewA,viewB,rawPointer) in
+            self.sortSubviews({(viewA, viewB, rawPointer) in
                 let view = rawPointer?.load(as: NSView.self)
-                
+
                 switch view {
                 case viewA:
                     return ComparisonResult.orderedDescending
@@ -48,12 +46,12 @@ public extension NSView {
                 }
             }, context: &theView)
     }
-    
+
     func sortSubviewToBack(_ view: NSView) {
         var theView = view
-        self.sortSubviews({(viewA,viewB,rawPointer) in
+        self.sortSubviews({(viewA, viewB, rawPointer) in
             let view = rawPointer?.load(as: NSView.self)
-            
+
             switch view {
             case viewA:
                 return ComparisonResult.orderedAscending
@@ -64,53 +62,53 @@ public extension NSView {
             }
         }, context: &theView)
     }
-    
+
     func sendSubviewToBack(_ view: NSView) {
         view.removeFromSuperview()
         addSubview(view, positioned: .below, relativeTo: nil)
     }
-    
+
     func removeSubviews() {
         let views = subviews
         for view: NSView in views {
             view.removeFromSuperview()
         }
     }
-    
-    func logSubviews(indent:Int = 0) {
-        let indentString = String(repeating: " ", count:indent)
-        
+
+    func logSubviews(indent: Int = 0) {
+        let indentString = String(repeating: " ", count: indent)
+
         for subview: NSView in subviews {
             print("\(subview.tag) \(indentString) view:\(subview) frame:\(subview.frame) bounds\(subview.bounds)")
 
             subview.logSubviews(indent: indent + 1)
         }
     }
-    
+
     func setBackgroundColor(_ color: NSColor) {
         wantsLayer = true
         layer?.backgroundColor = color.cgColor
     }
-    
+
     @discardableResult
     func insertVibrancyView(blendingMode: NSVisualEffectView.BlendingMode = .behindWindow) -> NSView? {
         if #available(OSX 10.13, *) {
-            
+
             let vibrant = NSVisualEffectView(frame: bounds)
             vibrant.autoresizingMask = [.width, .height]
             vibrant.blendingMode = blendingMode
 
             addSubview(vibrant, positioned: .below, relativeTo: nil)
- 
+
             return vibrant
         }
 
         return nil
     }
-    
+
     func imageWithSubviews() -> NSImage? {
         let mySize: NSSize = bounds.size
-        let imgSize: NSSize = NSMakeSize(mySize.width, mySize.height)
+        let imgSize: NSSize = NSSize(width: mySize.width, height: mySize.height)
         let bir: NSBitmapImageRep? = bitmapImageRepForCachingDisplay(in: bounds)
         bir?.size = imgSize
         if let aBir = bir {
@@ -122,21 +120,19 @@ public extension NSView {
         }
         return image
     }
-    
+
     func setBorder(width: Float, colour: NSColor?) {
         layer?.borderWidth = CGFloat(width)
         layer?.borderColor = colour?.cgColor
     }
-    
-    
-    var recursiveSubviews:[NSView] {
+
+    var recursiveSubviews: [NSView] {
         var views = subviews
         for view in subviews {
-            views.append(contentsOf:view.recursiveSubviews)
+            views.append(contentsOf: view.recursiveSubviews)
         }
         return views
     }
 }
-
 
 #endif

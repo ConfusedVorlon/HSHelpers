@@ -12,21 +12,20 @@ import Foundation
 import WebKit
 
 public extension WKWebView {
-    
-    
+
     /// Load an address
     ///
     /// - Parameter address: web address
-    func load(address:String){
+    func load(address: String) {
         if let myURL = URL(string: address) {
-            self.load(url:myURL)
+            self.load(url: myURL)
         }
     }
-    
+
     /// Load a url
     ///
     /// - Parameter address: web url
-    func load(url:URL){
+    func load(url: URL) {
         let myRequest = URLRequest(url: url)
         self.load(myRequest)
     }

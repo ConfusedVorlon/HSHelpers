@@ -9,6 +9,7 @@
 import Foundation
 import CoreGraphics
 
+// swiftlint:disable identifier_name
 
 /// Allows CGPoint, CGSize and CGVector to be approximately interchangable
 /// You can do maths with mixed types
@@ -23,15 +24,15 @@ public protocol Vector {
     var width: CGFloat {get set}
     var dx: CGFloat {get set}
     var dy: CGFloat {get set}
-    
+
     init(x: CGFloat, y: CGFloat)
-    init(_ vector:Vector)
+    init(_ vector: Vector)
 
     func floor <T: Vector>() -> T
-    var length:CGFloat {get}
+    var length: CGFloat {get}
 }
 
-//As long as each type has x & y, we can generate the others
+// As long as each type has x & y, we can generate the others
 extension Vector {
     public var width: CGFloat {
         get {
@@ -41,7 +42,7 @@ extension Vector {
             self.x = newValue
         }
     }
-    
+
     public var height: CGFloat {
         get {
             return self.y
@@ -50,7 +51,7 @@ extension Vector {
             self.y = newValue
         }
     }
-    
+
     public var dx: CGFloat {
         get {
             return self.x
@@ -59,7 +60,7 @@ extension Vector {
             self.x = newValue
         }
     }
-    
+
     public var dy: CGFloat {
         get {
             return self.y
@@ -71,46 +72,44 @@ extension Vector {
 }
 
 public extension Vector {
-    
+
     /// Round both components down to nearest int
     /// - Returns: Same type as input
-    func floor <T: Vector>() -> T
-    {
-        return T(x: self.x.rounded(.down), y:self.y.rounded(.down))
+    func floor <T: Vector>() -> T {
+        return T(x: self.x.rounded(.down), y: self.y.rounded(.down))
     }
-    
-    var length:CGFloat
-    {
+
+    var length: CGFloat {
         return sqrt(self.x * self.x + self.y * self.y)
     }
-    
-    var isPositive:Bool {
+
+    var isPositive: Bool {
         return self.x > 0 && self.y > 0
     }
-    
-    init<T:FloatConvertible>(side : T) {
+
+    init<T: FloatConvertible>(side: T) {
         self.init(x: side.cgFloat, y: side.cgFloat)
     }
 }
 
-//returns the smallest value in each dimension
-public func maxEach<T: Vector>(_ left: T,_ right: Vector) -> T {
+// returns the smallest value in each dimension
+public func maxEach<T: Vector>(_ left: T, _ right: Vector) -> T {
     let maxX = max(left.x, right.x)
     let maxY = max(left.y, right.y)
-    
+
     return T(x: maxX, y: maxY)
 }
 
-//returns the largest value in each dimension
-public func minEach<T: Vector>(_ left: T,_ right: Vector) -> T {
+// returns the largest value in each dimension
+public func minEach<T: Vector>(_ left: T, _ right: Vector) -> T {
     let minX = min(left.x, right.x)
     let minY = min(left.y, right.y)
-    
+
     return T(x: minX, y: minY)
 }
 
-//Operators return a value type matching the left item.
-//This allows mixed maths with vector types, but does mean that order matters
+// Operators return a value type matching the left item.
+// This allows mixed maths with vector types, but does mean that order matters
 public func + <T: Vector>(left: T, right: Vector) -> T {
     return T.init(x: left.x + right.x, y: left.y + right.y)
 }
@@ -128,9 +127,8 @@ public func / <T: Vector>(left: T, right: Vector) -> T {
 }
 
 public func % <T: Vector>(left: T, right: Vector) -> T {
-    return T.init(x: left.x.truncatingRemainder(dividingBy: right.x) , y: left.y.truncatingRemainder(dividingBy: right.y) )
+    return T.init(x: left.x.truncatingRemainder(dividingBy: right.x), y: left.y.truncatingRemainder(dividingBy: right.y) )
 }
-
 
 /// Modulus - but always returns positive value
 /// See Number + PositiveModulus
@@ -139,7 +137,7 @@ public func % <T: Vector>(left: T, right: Vector) -> T {
 ///   - right: modulo
 /// - Returns: modulus (in both dimensions separately)
 public func %% <T: Vector>(left: T, right: Vector) -> T {
-    return T.init(x: left.x %% right.x , y: left.y %% right.y )
+    return T.init(x: left.x %% right.x, y: left.y %% right.y )
 }
 
 /// (X,Y) + C
@@ -169,7 +167,6 @@ public func * <T: Vector>(left: T, right: FloatConvertible) -> T {
     return T.init(x: left.x * right.cgFloat, y: left.y * right.cgFloat)
 }
 
-
 /// (X,Y) / C
 /// - Parameters:
 ///   - left: v
@@ -180,28 +177,28 @@ public func / <T: Vector>(left: T, right: FloatConvertible) -> T {
 }
 
 public extension Vector {
+
     /// Cast to cgPoint
-    var cgPoint:CGPoint {
-        CGPoint.init(x:x,y:y)
+    var cgPoint: CGPoint {
+        CGPoint.init(x: x, y: y)
     }
-    
+
     /// Cast to cgSize
-    var cgSize:CGSize {
-        CGSize.init(width:width,height: height)
+    var cgSize: CGSize {
+        CGSize.init(width: width, height: height)
     }
-    
+
     /// cast to cgVector
-    var cgVector:CGVector {
-        CGVector.init(dx:dx,dy: dy)
+    var cgVector: CGVector {
+        CGVector.init(dx: dx, dy: dy)
     }
 }
 
 extension CGSize: Vector {
-
-    public init(_ vector:Vector){
+    public init(_ vector: Vector) {
         self.init(x: vector.x, y: vector.y)
     }
-    
+
     public var x: CGFloat {
         get {
             return self.width
@@ -210,7 +207,7 @@ extension CGSize: Vector {
             self.width = newValue
         }
     }
-    
+
     public var y: CGFloat {
         get {
             return self.height
@@ -219,17 +216,17 @@ extension CGSize: Vector {
             self.height = newValue
         }
     }
-      
+
     public init(x: CGFloat, y: CGFloat) {
         self.init(width: x, height: y)
     }
 }
 
 extension CGVector: Vector {
-    public init(_ vector:Vector){
+    public init(_ vector: Vector) {
         self.init(dx: vector.x, dy: vector.y)
     }
-    
+
     public var x: CGFloat {
         get {
             return self.dx
@@ -238,7 +235,7 @@ extension CGVector: Vector {
             self.dx = newValue
         }
     }
-    
+
     public var y: CGFloat {
         get {
             return self.dy
@@ -254,11 +251,8 @@ extension CGVector: Vector {
 }
 
 extension CGPoint: Vector {
-    public init(_ vector:Vector){
+    public init(_ vector: Vector) {
         self.init(x: vector.x, y: vector.y)
     }
 
 }
-
-
-

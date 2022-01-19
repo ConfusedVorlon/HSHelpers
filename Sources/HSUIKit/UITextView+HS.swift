@@ -8,26 +8,25 @@
 
 #if canImport(UIKit) && !os(watchOS)
 
-
 import Foundation
 import UIKit
 import HSHelpers
 
 public extension UITextView {
-    @discardableResult
+
     /// Set font for the string
     ///
     /// - Parameters:
     ///   - font: new font
     ///   - textToFind: substring to adjust. Sets for the whole string if this is nil
     /// - Returns: true if succesful
-    func set(font:UIFont, forText textToFind:String? = nil) -> Bool {
-        
+    @discardableResult
+    func set(font: UIFont, forText textToFind: String? = nil) -> Bool {
+
         if let text = self.attributedText {
-                    let mutableText:NSMutableAttributedString = NSMutableAttributedString.init(attributedString: text)
+                    let mutableText: NSMutableAttributedString = NSMutableAttributedString.init(attributedString: text)
             return mutableText.set(font: font, forText: textToFind)
-        }
-        else {
+        } else {
             return false
         }
     }

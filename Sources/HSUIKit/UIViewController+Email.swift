@@ -7,7 +7,6 @@
 
 #if canImport(UIKit) && !os(watchOS) && !os(tvOS)
 
-
 import Foundation
 import UIKit
 import MessageUI
@@ -18,20 +17,20 @@ public struct EmailAttachment {
         self.mimeType = mimeType
         self.fileName = fileName
     }
-    
-    public let data:Data
-    public let mimeType:String
-    public let fileName:String
+
+    public let data: Data
+    public let mimeType: String
+    public let fileName: String
 }
 
-public protocol CanSendEmail:MFMailComposeViewControllerDelegate {
-    func sendEmail(to:[String],subject:String,body:String, isHtml:Bool);
-    func sendEmail(to:[String],subject:String,body:String, isHtml:Bool,attachments:[EmailAttachment]);
+public protocol CanSendEmail: MFMailComposeViewControllerDelegate {
+    func sendEmail(to: [String], subject: String, body: String, isHtml: Bool)
+    func sendEmail(to: [String], subject: String, body: String, isHtml: Bool, attachments: [EmailAttachment])
 }
 
 /// Add this to any UIViewController to let it easily send an email
 public extension CanSendEmail where Self: UIViewController {
-    
+
     /// Send using mailto
     /// - Parameters:
     ///   - to: array of emails
@@ -41,12 +40,12 @@ public extension CanSendEmail where Self: UIViewController {
     ///   - attachments: attachments will cause this to fail. They're here to match the system-based call
     /// - Returns: success
     @available(iOS 10.0, *)
-    func sendByURL(to:[String],subject:String,body:String, isHtml:Bool,attachments:[EmailAttachment] = []) -> Bool {
-        
+    func sendByURL(to: [String], subject: String, body: String, isHtml: Bool, attachments: [EmailAttachment] = []) -> Bool {
+
         if attachments.count != 0 {
             return false
         }
-        
+
         var txtBody = body
         if isHtml {
             txtBody = body.replacingOccurrences(of: "<br />", with: "\n")
@@ -56,32 +55,30 @@ public extension CanSendEmail where Self: UIViewController {
                 return false
             }
         }
-        
+
         let toJoined = to.joined(separator: ",")
         guard var feedbackUrl = URLComponents.init(string: "mailto:\(toJoined)") else {
             return false
         }
-        
-        
-        
+
         var queryItems: [URLQueryItem] = []
         queryItems.append(URLQueryItem.init(name: "SUBJECT", value: subject))
         queryItems.append(URLQueryItem.init(name: "BODY",
                                             value: txtBody))
         feedbackUrl.queryItems = queryItems
-        
+
         if let url = feedbackUrl.url {
-            //don't bother checking if we can open it.
-            //that requires us to set LSApplicationQueries
-            //even with no mail app and no default handler, opening mailto simply prompts to install mail app
+            // don't bother checking if we can open it.
+            // that requires us to set LSApplicationQueries
+            // even with no mail app and no default handler, opening mailto simply prompts to install mail app
             UIApplication.shared.open(url)
             return true
         }
-        
+
         return false
-        
+
     }
-    
+
     /// Send email with system dialog if available, then with mailto
     /// - Parameters:
     ///   - to: array of emails
@@ -89,26 +86,26 @@ public extension CanSendEmail where Self: UIViewController {
     ///   - body: body
     ///   - isHtml: _extremely_ simple html support!
     ///   - attachments: attachments only work with the system email
-    func sendEmail(to:[String],subject:String,body:String, isHtml:Bool = false,attachments:[EmailAttachment]) {
-        
+    func sendEmail(to: [String], subject: String, body: String, isHtml: Bool = false, attachments: [EmailAttachment]) {
+
         if MFMailComposeViewController.canSendMail() {
 
-                let mail = MFMailComposeViewControllerwDelegate()
-                mail.mailComposeDelegate = mail
-                mail.setToRecipients(to)
-                mail.setMessageBody(body, isHTML: isHtml)
-                mail.setSubject(subject)
-                
-                for attachment in attachments {
-                    mail.addAttachmentData(attachment.data,
-                                           mimeType: attachment.mimeType,
-                                           fileName: attachment.fileName)
-                }
-                
-                present(mail, animated: true)
+            let mail = MFMailComposeViewControllerwDelegate()
+            mail.mailComposeDelegate = mail
+            mail.setToRecipients(to)
+            mail.setMessageBody(body, isHTML: isHtml)
+            mail.setSubject(subject)
+
+            for attachment in attachments {
+                mail.addAttachmentData(attachment.data,
+                                       mimeType: attachment.mimeType,
+                                       fileName: attachment.fileName)
+            }
+
+            present(mail, animated: true)
 
         } else {
-            
+
             var ableToSendByURL = false
             if #available(iOS 10.0, *) {
                 ableToSendByURL = sendByURL(to: to,
@@ -124,8 +121,8 @@ public extension CanSendEmail where Self: UIViewController {
             }
         }
     }
-    
-    func sendEmail(to:[String],subject:String,body:String, isHtml:Bool = false) {
+
+    func sendEmail(to: [String], subject: String, body: String, isHtml: Bool = false) {
         sendEmail(to: to,
                   subject: subject,
                   body: body,
@@ -134,31 +131,26 @@ public extension CanSendEmail where Self: UIViewController {
     }
 }
 
-//Delegate isn't always called (e.g. VC can be dismissed by tapping outside form in iPad)
-//using subclass rather than delegate object means there isn't a stranded delegate
-//delegate is weak - so no self-retain issue
-fileprivate class MFMailComposeViewControllerwDelegate:MFMailComposeViewController,MFMailComposeViewControllerDelegate {
+// Delegate isn't always called (e.g. VC can be dismissed by tapping outside form in iPad)
+// using subclass rather than delegate object means there isn't a stranded delegate
+// delegate is weak - so no self-retain issue
+private class MFMailComposeViewControllerwDelegate: MFMailComposeViewController, MFMailComposeViewControllerDelegate {
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         switch result {
         case MFMailComposeResult.cancelled:
             print("Mail cancelled")
-            break
         case MFMailComposeResult.saved:
             print("Mail saved")
-            break
         case MFMailComposeResult.sent:
             print("Mail sent")
-            break
         case MFMailComposeResult.failed:
             print("Mail failed")
-            break
         default:
             break
         }
-        
+
         self.dismiss(animated: true, completion: nil)
     }
 }
-
 
 #endif

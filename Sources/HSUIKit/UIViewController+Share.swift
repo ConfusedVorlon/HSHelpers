@@ -10,18 +10,18 @@
 import Foundation
 import UIKit
 
-//Easily share an item using UIActivityViewController
+// Easily share an item using UIActivityViewController
 public extension UIViewController {
 
     @objc
-    func share(items:[ShareItem],sourceView:UIView? = nil,permittedArrowDirections:UIPopoverArrowDirection = []) {
-        
+    func share(items: [ShareItem], sourceView: UIView? = nil, permittedArrowDirections: UIPopoverArrowDirection = []) {
+
         guard let view = sourceView ?? self.view else {
             return
         }
-        
+
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-    
+
         if let popoverPC = activityViewController.popoverPresentationController {
             popoverPC.sourceView = view
             popoverPC.sourceRect = view.bounds
@@ -36,27 +36,28 @@ public extension UIViewController {
 @objc
 /// Item to share Url, UIImage, etc
 public class ShareItem: NSObject, UIActivityItemSource {
-    
-    private let subject:String
-    private let item:Any
-    
+
+    private let subject: String
+    private let item: Any
+
     public init(subject: String, item: Any) {
         self.subject = subject
         self.item = item
-        
+
         super.init()
     }
-    
+
     public func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
         return item
     }
-    
-    public func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+
+    public func activityViewController(_ activityViewController: UIActivityViewController,
+                                       itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
         return item
     }
-    
+
     public func activityViewController(_ activityViewController: UIActivityViewController,
-                                subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+                                       subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
         return subject
     }
 }

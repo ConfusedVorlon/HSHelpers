@@ -1,10 +1,9 @@
-//From
+// From
 //https://noahgilmore.com/blog/dark-mode-uicolor-compatibility/
 
 #if canImport(UIKit)
 
 import UIKit
-
 
 @objcMembers
 @objc public class ColorCompatibility: NSObject {

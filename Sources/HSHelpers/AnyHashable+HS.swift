@@ -8,12 +8,11 @@
 import Foundation
 
 public extension AnyHashable {
-    var string:String? {
+    var string: String? {
         return self as? String
     }
 
-    var int:Int? {
+    var int: Int? {
         return self as? Int
     }
 }
-

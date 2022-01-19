@@ -11,7 +11,7 @@ import Foundation
 import AppKit
 
 public extension NSGraphicsContext {
-    class func protectContext(_ block:(CGContext)->Void) {
+    class func protectContext(_ block: (CGContext) -> Void) {
         guard let context = NSGraphicsContext.current?.cgContext else {
             return
         }

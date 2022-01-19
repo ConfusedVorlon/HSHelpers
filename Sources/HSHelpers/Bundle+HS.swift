@@ -8,11 +8,10 @@
 
 import Foundation
 
-
 /// Convenience accessors for Bundle
 /// Bundle.main[.version]
 public extension Bundle {
-    
+
     /// Keys for common properties
     enum Key: String {
         case shortVersionString = "CFBundleShortVersionString",
@@ -21,21 +20,19 @@ public extension Bundle {
         displayName = "CFBundleDisplayName",
         id = "CFBundleIdentifier"
     }
-    
+
     /// Allows Bundle.main[.version]
     subscript(index: Bundle.Key) ->  Any? {
-        get {
-            return self.object(forInfoDictionaryKey: index.rawValue)
-        }
+        return self.object(forInfoDictionaryKey: index.rawValue)
     }
-    
+
     /// App Name
-    var appName:String? {
+    var appName: String? {
         return (self[.displayName] as? String) ?? (self[.name] as? String)
     }
-    
+
     /// "\(shortVersion) (\(build))"
-    var appVersion:String? {
+    var appVersion: String? {
         if let shortVersion = self[.shortVersionString],
             let build = self[.version] {
             return "\(shortVersion) (\(build))"

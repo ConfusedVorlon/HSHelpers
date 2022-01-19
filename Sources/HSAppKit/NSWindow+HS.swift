@@ -12,45 +12,46 @@ import AppKit
 import HSHelpers
 
 public extension NSWindow {
-    var isFullscreen:Bool {
+    var isFullscreen: Bool {
         return self.styleMask.contains(.fullScreen)
     }
-    
-    var isCloseable:Bool {
+
+    var isCloseable: Bool {
         return self.styleMask.contains(.closable)
     }
-    
+
     func ensureWindowIsFullyVisible() {
+        // swiftlint:disable shorthand_operator
+
         if let windowScreen = NSScreen.screens.first(where: { $0.frame.contains(self.frame.center) }) {
             let windowFrame = windowScreen.frame
-            
-            //move edges in order
+
+            // move edges in order
             var newFrame = self.frame
 
-            //right
+            // right
             if newFrame.maxX > windowFrame.maxX {
-                newFrame.center = newFrame.center + CGPoint(x: windowFrame.maxX - newFrame.maxX,y: 0)
+                newFrame.center = newFrame.center + CGPoint(x: windowFrame.maxX - newFrame.maxX, y: 0)
             }
 
-            //left
+            // left
             if newFrame.minX < windowFrame.minX {
-                newFrame.center = newFrame.center + CGPoint(x: windowFrame.minX - newFrame.minX,y: 0)
+                newFrame.center = newFrame.center + CGPoint(x: windowFrame.minX - newFrame.minX, y: 0)
             }
 
-            //bottom
+            // bottom
             if newFrame.maxY > windowFrame.maxY {
-                newFrame.center = newFrame.center + CGPoint(x: 0,y: windowFrame.maxY - newFrame.maxY)
+                newFrame.center = newFrame.center + CGPoint(x: 0, y: windowFrame.maxY - newFrame.maxY)
             }
 
-            //left
+            // left
             if newFrame.minY < windowFrame.minY {
-                newFrame.center = newFrame.center + CGPoint(x: 0,y: windowFrame.minY - newFrame.minY)
+                newFrame.center = newFrame.center + CGPoint(x: 0, y: windowFrame.minY - newFrame.minY)
             }
-            
+
             self.setFrameOrigin(newFrame.origin)
         }
     }
 }
-
 
 #endif

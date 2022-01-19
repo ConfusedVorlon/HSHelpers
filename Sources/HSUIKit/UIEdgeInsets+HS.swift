@@ -6,21 +6,19 @@
 //  Copyright © 2017 Tinkerswitch. All rights reserved.
 //
 
-
 #if canImport(UIKit)
 
 import Foundation
 import UIKit
 
 public extension UIEdgeInsets {
-    init(margin: CGFloat){
+    init(margin: CGFloat) {
         self.init(top: margin, left: margin, bottom: margin, right: margin)
     }
-    
-    init(sides:CGFloat,topBottom:CGFloat){
+
+    init(sides: CGFloat, topBottom: CGFloat) {
         self.init(top: topBottom, left: sides, bottom: topBottom, right: sides)
     }
 }
 
 #endif
-

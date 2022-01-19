@@ -11,7 +11,7 @@ import CoreGraphics
 infix operator %%
 
 public extension Float {
-    
+
     /// Returns modulus, but forces it to be positive
     /// - Parameters:
     ///   - left: number
@@ -24,7 +24,7 @@ public extension Float {
 }
 
 public extension Double {
-    
+
     /// Returns modulus, but forces it to be positive
     /// - Parameters:
     ///   - left: number
@@ -35,8 +35,6 @@ public extension Double {
         return truncatingRemainder >= 0 ? truncatingRemainder : truncatingRemainder+abs(right)
     }
 }
-
-
 
 public extension CGFloat {
     /// Returns modulus, but forces it to be positive
@@ -49,7 +47,6 @@ public extension CGFloat {
         return truncatingRemainder >= 0 ? truncatingRemainder : truncatingRemainder+abs(right)
     }
 }
-
 
 public extension Int {
     /// Returns modulus, but forces it to be positive
