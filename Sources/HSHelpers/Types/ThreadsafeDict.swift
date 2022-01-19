@@ -13,8 +13,8 @@ public class ThreadsafeDict<Key: Hashable, Value> {
 
     private var dict: [Key: Value]
     private let queue: DispatchQueue = DispatchQueue(label: "com.hobbyistsoftware.threadsafe.dict",
-                                                   qos: DispatchQoS.userInitiated,
-                                                   attributes: .concurrent)
+                                                     qos: DispatchQoS.userInitiated,
+                                                     attributes: .concurrent)
 
     /// Init
     /// - Parameter newDict: initial dictionary
@@ -24,8 +24,8 @@ public class ThreadsafeDict<Key: Hashable, Value> {
 
     /// if key/value are decodable, provide decodable initialiser
     required public init(from decoder: Decoder) throws
-      where Key: Decodable, Value: Decodable {
-      dict = try [Key: Value].init(from: decoder)
+    where Key: Decodable, Value: Decodable {
+        dict = try [Key: Value].init(from: decoder)
     }
 
     /// Returns regular dict
@@ -62,11 +62,11 @@ public class ThreadsafeDict<Key: Hashable, Value> {
 
     /// Keys
     public var keys: Dictionary<Key, Value>.Keys {
-            var result: Dictionary<Key, Value>.Keys?
-            queue.sync {
-                result = dict.keys
-            }
-            return result!
+        var result: Dictionary<Key, Value>.Keys?
+        queue.sync {
+            result = dict.keys
+        }
+        return result!
     }
 }
 

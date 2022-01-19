@@ -23,7 +23,7 @@ public class ThreadsafeArray<Value> {
 
     /// if value is decodable, provide decodable initialiser
     required public init(from decoder: Decoder) throws
-      where Value: Decodable {
+    where Value: Decodable {
         array = try [Value].init(from: decoder)
     }
 

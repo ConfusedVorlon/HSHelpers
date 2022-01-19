@@ -33,8 +33,8 @@ public extension UIViewController {
     }
 }
 
-@objc
 /// Item to share Url, UIImage, etc
+@objc
 public class ShareItem: NSObject, UIActivityItemSource {
 
     private let subject: String
