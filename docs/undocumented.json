@@ -2,42 +2,42 @@
   "warnings": [
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/HoverView.swift",
-      "line": 15,
+      "line": 12,
       "symbol": "HoverView",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/HoverView.swift",
-      "line": 17,
+      "line": 14,
       "symbol": "HoverView.hovering",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/HoverView.swift",
-      "line": 25,
+      "line": 22,
       "symbol": "HoverView.hoverChangeBlock",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/HoverView.swift",
-      "line": 27,
+      "line": 24,
       "symbol": "HoverView.updateTrackingAreas()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/HoverView.swift",
-      "line": 40,
+      "line": 37,
       "symbol": "HoverView.mouseEntered(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/HoverView.swift",
-      "line": 44,
+      "line": 41,
       "symbol": "HoverView.mouseExited(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -51,21 +51,21 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSButton+HS.swift",
-      "line": 16,
+      "line": 15,
       "symbol": "NSButton.isOn",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSButton+HS.swift",
-      "line": 25,
+      "line": 24,
       "symbol": "NSButton.setTitle(colour:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSDocument+SaveCompletion.swift",
-      "line": 14,
+      "line": 13,
       "symbol": "NSDocSaveCompletion",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
@@ -93,35 +93,35 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSImage+HS.swift",
-      "line": 56,
+      "line": 55,
       "symbol": "NSImage.jpegRepresentation(compression:size:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSImage+HS.swift",
-      "line": 90,
+      "line": 104,
       "symbol": "NSImage.singlePixelImage(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSImage+HS.swift",
-      "line": 128,
+      "line": 138,
       "symbol": "NSImage.cgImage",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSImage+HS.swift",
-      "line": 164,
+      "line": 142,
       "symbol": "NSImage.imageRotatedByDegreess(degrees:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSScreen+HS.swift",
-      "line": 15,
+      "line": 14,
       "symbol": "NSScreen.applyWallpaper(fileURL:scaling:allowClipping:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -149,7 +149,7 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSScreen+HS.swift",
-      "line": 76,
+      "line": 77,
       "symbol": "NSScreen.serialNumber",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -163,182 +163,182 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 23,
+      "line": 22,
       "symbol": "NSView.center",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 36,
+      "line": 34,
       "symbol": "NSView.bringSubviewToFront(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 52,
+      "line": 50,
       "symbol": "NSView.sortSubviewToBack(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 68,
+      "line": 66,
       "symbol": "NSView.sendSubviewToBack(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 73,
+      "line": 71,
       "symbol": "NSView.removeSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 80,
+      "line": 78,
       "symbol": "NSView.logSubviews(indent:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 90,
+      "line": 88,
       "symbol": "NSView.setBackgroundColor(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 96,
+      "line": 94,
       "symbol": "NSView.insertVibrancyView(blendingMode:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 111,
+      "line": 109,
       "symbol": "NSView.imageWithSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 126,
+      "line": 124,
       "symbol": "NSView.setBorder(width:colour:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+HS.swift",
-      "line": 132,
+      "line": 129,
       "symbol": "NSView.recursiveSubviews",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+NibLoadable.swift",
-      "line": 14,
+      "line": 13,
       "symbol": "NibLoadable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+NibLoadable.swift",
-      "line": 15,
+      "line": 14,
       "symbol": "NibLoadable.nibName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+NibLoadable.swift",
-      "line": 16,
+      "line": 15,
       "symbol": "NibLoadable.createFromNib(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+NibLoadable.swift",
-      "line": 19,
+      "line": 18,
       "symbol": "NibLoadable",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+NibLoadable.swift",
-      "line": 21,
+      "line": 20,
       "symbol": "NibLoadable.nibName",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSView+NibLoadable.swift",
-      "line": 25,
+      "line": 24,
       "symbol": "NibLoadable.createFromNib(in:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 16,
+      "line": 13,
       "symbol": "FromStoryboard",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 17,
+      "line": 14,
       "symbol": "FromStoryboard.storyboardFilename",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 18,
+      "line": 15,
       "symbol": "FromStoryboard.storyboardId",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 19,
+      "line": 17,
       "symbol": "FromStoryboard.fromStoryboard()",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 20,
+      "line": 18,
       "symbol": "FromStoryboard.dismissSheet()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 23,
+      "line": 21,
       "symbol": "FromStoryboard",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 48,
+      "line": 44,
       "symbol": "FromStoryboard.storyboardFilename",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 49,
+      "line": 45,
       "symbol": "FromStoryboard.storyboardId",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/NSViewController+HS.swift",
-      "line": 53,
+      "line": 49,
       "symbol": "NSViewController.dismissSheet()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -366,28 +366,28 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/PresentedNSViewController.swift",
-      "line": 13,
+      "line": 12,
       "symbol": "PresentedNSViewController",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/PresentedNSViewController.swift",
-      "line": 17,
+      "line": 16,
       "symbol": "PresentedNSViewController.presentAsSheet(from:presented:dismissed:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/PresentedNSViewController.swift",
-      "line": 24,
+      "line": 23,
       "symbol": "PresentedNSViewController.viewDidAppear()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSAppKit/PresentedNSViewController.swift",
-      "line": 30,
+      "line": 29,
       "symbol": "PresentedNSViewController.viewDidDisappear()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -408,50 +408,64 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Array+HS.swift",
-      "line": 24,
+      "line": 12,
+      "symbol": "Array.safeRemoveFirst()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Array+HS.swift",
+      "line": 33,
       "symbol": "Array.remove(element:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Array+HS.swift",
-      "line": 30,
+      "line": 39,
       "symbol": "Array.remove(elements:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Array+HS.swift",
-      "line": 52,
+      "line": 61,
       "symbol": "Collection.clipped(toMaxLength:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Bundle+HS.swift",
-      "line": 18,
+      "line": 17,
       "symbol": "Bundle.Key.shortVersionString",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Bundle+HS.swift",
-      "line": 19,
+      "line": 18,
       "symbol": "Bundle.Key.version",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Bundle+HS.swift",
-      "line": 20,
+      "line": 19,
       "symbol": "Bundle.Key.name",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Bundle+HS.swift",
-      "line": 21,
+      "line": 20,
       "symbol": "Bundle.Key.displayName",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Bundle+HS.swift",
+      "line": 21,
+      "symbol": "Bundle.Key.id",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
@@ -506,112 +520,112 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Data+HS.swift",
-      "line": 20,
+      "line": 19,
       "symbol": "Data.utf8String",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Data+HS.swift",
-      "line": 24,
+      "line": 23,
       "symbol": "Data.utf16String",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Data+HS.swift",
-      "line": 29,
+      "line": 28,
       "symbol": "Data.writeWithIntermediaryDirectories(to:options:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 21,
+      "line": 18,
       "symbol": "Date.isInTheFuture",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 27,
+      "line": 22,
       "symbol": "Date.isInThePast",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 42,
+      "line": 35,
       "symbol": "Date.shortDateTimeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 49,
+      "line": 42,
       "symbol": "Date.fixedShortDateTimeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 56,
+      "line": 49,
       "symbol": "Date.presentableShortDateTimeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 63,
+      "line": 56,
       "symbol": "Date.presentableShortDateString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 71,
+      "line": 64,
       "symbol": "Date.timeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 78,
+      "line": 71,
       "symbol": "Date.presentableTimeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 86,
+      "line": 79,
       "symbol": "Date.localTimeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 93,
+      "line": 86,
       "symbol": "Date.presentableLocalTimeString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 101,
+      "line": 94,
       "symbol": "Date.-(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 105,
+      "line": 98,
       "symbol": "Date.with(year:month:day:hour:minute:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Date+HS.swift",
-      "line": 117,
+      "line": 110,
       "symbol": "Date.todayAt(hour:minute:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
@@ -625,105 +639,98 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/DispatchQueue+HS.swift",
-      "line": 19,
+      "line": 17,
       "symbol": "DispatchQueue.userInitiated",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/DispatchQueue+HS.swift",
-      "line": 25,
+      "line": 21,
       "symbol": "DispatchQueue.userInteractive",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/DispatchQueue+HS.swift",
-      "line": 31,
+      "line": 25,
       "symbol": "DispatchQueue.asyncAfter(delay:execute:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 15,
-      "symbol": "FileManager.documentsDirectoryURL",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 17,
+      "line": 13,
       "symbol": "FileManager.documentsDirectory",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 23,
+      "line": 17,
       "symbol": "FileManager.cachesDirectory",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 44,
+      "line": 35,
       "symbol": "FileManager.sizeOfFile(atPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 48,
+      "line": 39,
       "symbol": "FileManager.sizeOfFile(atURL:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 55,
+      "line": 46,
       "symbol": "FileManager.modificationDateOfFile(atPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 65,
+      "line": 56,
       "symbol": "FileManager.modificationDateOfFile(atURL:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 72,
+      "line": 63,
       "symbol": "FileManager.fileIsDirectory(atPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 86,
+      "line": 77,
       "symbol": "FileManager.fileIsDirectory(atURL:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 94,
+      "line": 85,
       "symbol": "FileManager.save(data:fullFilename:createDirectory:allowEmpty:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 119,
+      "line": 108,
       "symbol": "FileManager.uniquePath(fromBase:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/FileManager+HS.swift",
-      "line": 142,
+      "line": 131,
       "symbol": "FileManager.uniqueFileURL(fromBase:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
@@ -849,42 +856,42 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/NSMutableAttributedString+HS.swift",
-      "line": 26,
+      "line": 24,
       "symbol": "NSAttributedString.init(htmlString:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/NSMutableAttributedString+HS.swift",
-      "line": 36,
+      "line": 33,
       "symbol": "NSAttributedString.mutable",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/NSMutableAttributedString+HS.swift",
-      "line": 44,
+      "line": 40,
       "symbol": "NSMutableAttributedString.fullRange",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/NSMutableAttributedString+HS.swift",
-      "line": 48,
+      "line": 44,
       "symbol": "NSMutableAttributedString.init(string:link:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/NSMutableAttributedString+HS.swift",
-      "line": 62,
+      "line": 58,
       "symbol": "NSMutableAttributedString.set(link:forText:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/NSMutableAttributedString+HS.swift",
-      "line": 83,
+      "line": 79,
       "symbol": "NSMutableAttributedString.set(font:forText:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -996,14 +1003,14 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/SKProduct+HS.swift",
-      "line": 17,
+      "line": 15,
       "symbol": "SKProduct.subscriptionPricingDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/SKProduct+HS.swift",
-      "line": 42,
+      "line": 39,
       "symbol": "SKProduct.freeTrialPeriod",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -1017,9 +1024,16 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 17,
+      "line": 16,
       "symbol": "LosslessStringConvertible.string",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
+      "line": 23,
+      "symbol": "StringProtocol.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
@@ -1059,63 +1073,56 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 29,
-      "symbol": "StringProtocol.subscript(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 42,
+      "line": 40,
       "symbol": "String.capitalizingFirstLetter()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 48,
+      "line": 46,
       "symbol": "String.deleting(prefix:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 53,
+      "line": 51,
       "symbol": "String.deleting(suffix:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 59,
+      "line": 56,
       "symbol": "String.contains(string:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 63,
+      "line": 60,
       "symbol": "String.occurences(of:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 74,
+      "line": 70,
       "symbol": "String.truncate(to:trailing:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 128,
+      "line": 124,
       "symbol": "String.toBase64()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/String+HS.swift",
-      "line": 135,
+      "line": 131,
       "symbol": "String.fromBase64()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -1129,112 +1136,112 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/ThreadsafeArray.swift",
-      "line": 43,
+      "line": 39,
       "symbol": "ThreadsafeArray.subscript(_:)",
       "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/ThreadsafeDict.swift",
-      "line": 43,
+      "line": 40,
       "symbol": "ThreadsafeDict.subscript(_:)",
       "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 20,
+      "line": 21,
       "symbol": "Vector.x",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 21,
+      "line": 22,
       "symbol": "Vector.y",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 22,
-      "symbol": "Vector.height",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
       "line": 23,
-      "symbol": "Vector.width",
+      "symbol": "Vector.height",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
       "line": 24,
-      "symbol": "Vector.dx",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 25,
-      "symbol": "Vector.dy",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 27,
-      "symbol": "Vector.init(x:y:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 28,
-      "symbol": "Vector.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 30,
-      "symbol": "Vector.floor()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 31,
-      "symbol": "Vector.length()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 36,
       "symbol": "Vector.width",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 45,
-      "symbol": "Vector.height",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 54,
+      "line": 25,
       "symbol": "Vector.dx",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 63,
+      "line": 26,
+      "symbol": "Vector.dy",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 28,
+      "symbol": "Vector.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 29,
+      "symbol": "Vector.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 31,
+      "symbol": "Vector.floor()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 32,
+      "symbol": "Vector.length",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 37,
+      "symbol": "Vector.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 46,
+      "symbol": "Vector.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 55,
+      "symbol": "Vector.dx",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
+      "line": 64,
       "symbol": "Vector.dy",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -1242,139 +1249,139 @@
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
       "line": 82,
-      "symbol": "Vector.length()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "symbol": "Vector.length",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 87,
+      "line": 86,
       "symbol": "Vector.isPositive",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 91,
+      "line": 90,
       "symbol": "Vector.init(side:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 97,
+      "line": 96,
       "symbol": "maxEach(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 105,
+      "line": 104,
       "symbol": "minEach(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 114,
+      "line": 113,
       "symbol": "+(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 118,
+      "line": 117,
       "symbol": "-(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 122,
+      "line": 121,
       "symbol": "*(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 126,
+      "line": 125,
       "symbol": "/(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 130,
+      "line": 129,
       "symbol": "%(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 200,
+      "line": 198,
       "symbol": "CGSize.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 204,
+      "line": 202,
       "symbol": "CGSize.x",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 213,
+      "line": 211,
       "symbol": "CGSize.y",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 222,
+      "line": 220,
       "symbol": "CGSize.init(x:y:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 228,
+      "line": 226,
       "symbol": "CGVector.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 232,
+      "line": 230,
       "symbol": "CGVector.x",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 241,
+      "line": 239,
       "symbol": "CGVector.y",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 250,
+      "line": 248,
       "symbol": "CGVector.init(x:y:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/Vectors.swift",
-      "line": 256,
+      "line": 254,
       "symbol": "CGPoint.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/Types/WeakTimer.swift",
-      "line": 9,
+      "line": 11,
       "symbol": "WeakTimer.scheduledTimer(withTimeInterval:repeats:block:)",
       "symbol_kind": "source.lang.swift.decl.function.method.class",
       "warning": "undocumented"
@@ -1402,7 +1409,7 @@
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/URL+HS.swift",
-      "line": 66,
+      "line": 65,
       "symbol": "URL.directory",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -1410,48 +1417,41 @@
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/URLComponents+HS.swift",
       "line": 13,
-      "symbol": "Array.subscript(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/URLComponents+HS.swift",
-      "line": 28,
       "symbol": "URLComponents.subscript(_:)",
       "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/URLComponents+HS.swift",
-      "line": 59,
+      "line": 42,
       "symbol": "URLComponents.init(scheme:host:port:path:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/URLComponents+HS.swift",
-      "line": 80,
+      "line": 62,
       "symbol": "URLComponents.encodePlusses()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSHelpers/URLComponents+HS.swift",
-      "line": 85,
+      "line": 67,
       "symbol": "URLComponents.treatUnencodedPlussesAsSpaces()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSTime/Time+HS.swift",
-      "line": 18,
+      "line": 17,
       "symbol": "Interval.fromNow",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/rob/Documents/Development/Mac/Packages/HSHelpers/Sources/HSTime/Time+HS.swift",
-      "line": 23,
+      "line": 22,
       "symbol": "Interval.ago",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
