@@ -11,10 +11,13 @@ import Foundation
 import AppKit
 
 public extension NSScreen {
-    func applyWallpaper(fileURL: URL, scaling: NSImageScaling = NSImageScaling.scaleProportionallyUpOrDown, allowClipping: Bool? = true) throws {
+    func applyWallpaper(fileURL: URL,
+                        scaling: NSImageScaling = NSImageScaling.scaleProportionallyUpOrDown,
+                        allowClipping: Bool? = true) throws {
 
         var options = [NSWorkspace.DesktopImageOptionKey.imageScaling: NSNumber.init(value: scaling.rawValue)]
         if let allowClipping = allowClipping {
+            // swiftlint:disable:next compiler_protocol_init
             options[NSWorkspace.DesktopImageOptionKey.allowClipping] = NSNumber.init(booleanLiteral: allowClipping)
         }
 
@@ -57,7 +60,8 @@ public extension NSScreen {
             IOObjectRelease(ioServicePort)
         }
 
-        guard let info = IODisplayCreateInfoDictionary(ioServicePort, UInt32(kIODisplayOnlyPreferredName)).takeRetainedValue() as? [String: AnyObject] else {
+        let dict = IODisplayCreateInfoDictionary(ioServicePort, UInt32(kIODisplayOnlyPreferredName)).takeRetainedValue()
+        guard let info = dict as? [String: AnyObject] else {
             print("IODisplayCreateInfoDictionary unexpected format")
             return nil
         }

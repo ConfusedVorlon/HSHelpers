@@ -31,6 +31,7 @@ public extension CanShowPreview where Self: UIViewController {
 
 }
 
+// swiftlint:disable:next type_name
 private class VCDelegateForDocumentInteractionPresentation: NSObject, UIDocumentInteractionControllerDelegate {
     var viewController: UIViewController
 

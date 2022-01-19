@@ -21,6 +21,8 @@ public extension NSWindow {
     }
 
     func ensureWindowIsFullyVisible() {
+        // swiftlint:disable shorthand_operator
+
         if let windowScreen = NSScreen.screens.first(where: { $0.frame.contains(self.frame.center) }) {
             let windowFrame = windowScreen.frame
 

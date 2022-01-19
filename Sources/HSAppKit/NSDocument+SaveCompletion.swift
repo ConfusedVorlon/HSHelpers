@@ -27,6 +27,7 @@ private class SaveCompletionHolder: NSObject {
     }
 }
 
+// swiftlint:disable:next identifier_name
 private var NSDocSaveCompletionAssociatedObjectHandle: UInt8 = 0
 
 public extension NSDocument {
@@ -43,7 +44,10 @@ public extension NSDocument {
             return objc_getAssociatedObject(self, &NSDocSaveCompletionAssociatedObjectHandle) as? SaveCompletionHolder
         }
         set {
-            objc_setAssociatedObject(self, &NSDocSaveCompletionAssociatedObjectHandle, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self,
+                                     &NSDocSaveCompletionAssociatedObjectHandle,
+                                     newValue,
+                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }

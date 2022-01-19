@@ -35,7 +35,10 @@ extension CGDirectDisplayID {
 
             while ioServ != 0 {
 
-                let info = IODisplayCreateInfoDictionary(ioServ, UInt32(kIODisplayOnlyPreferredName)).takeRetainedValue() as NSDictionary as! [String: AnyObject]
+                let infoDict = IODisplayCreateInfoDictionary(ioServ, UInt32(kIODisplayOnlyPreferredName)).takeRetainedValue()
+                guard let info = infoDict as NSDictionary as? [String: AnyObject] else {
+                    fatalError("infoDict failed to convert")
+                }
 
                 // print("found: \(info)")
 

@@ -22,13 +22,11 @@ public class ThreadsafeArray<Value> {
     }
 
     public var unsafeContents: [Value] {
-        get {
             var result: [Value]?
             queue.sync {
                 result = array
             }
             return result!
-        }
     }
 
     public subscript(index: Int) -> Value? {

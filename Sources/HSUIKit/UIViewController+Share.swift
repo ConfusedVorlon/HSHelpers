@@ -49,12 +49,13 @@ public class ShareItem: NSObject, UIActivityItemSource {
         return item
     }
 
-    public func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+    public func activityViewController(_ activityViewController: UIActivityViewController,
+                                       itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
         return item
     }
 
     public func activityViewController(_ activityViewController: UIActivityViewController,
-                                subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+                                       subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
         return subject
     }
 }

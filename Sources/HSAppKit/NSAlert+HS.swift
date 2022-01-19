@@ -16,7 +16,7 @@ public extension NSAlert {
                      informativeText: String? = nil,
                      ok: String = "Ok",
                      cancel: String? = nil,
-                     okBlock:(()->Void)? = nil) {
+                     okBlock:(() -> Void)? = nil) {
         let alert = NSAlert()
 
         alert.messageText = message

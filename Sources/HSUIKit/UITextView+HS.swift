@@ -13,13 +13,14 @@ import UIKit
 import HSHelpers
 
 public extension UITextView {
-    @discardableResult
+
     /// Set font for the string
     ///
     /// - Parameters:
     ///   - font: new font
     ///   - textToFind: substring to adjust. Sets for the whole string if this is nil
     /// - Returns: true if succesful
+    @discardableResult
     func set(font: UIFont, forText textToFind: String? = nil) -> Bool {
 
         if let text = self.attributedText {

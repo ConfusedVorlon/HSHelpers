@@ -146,8 +146,8 @@ public extension NSMutableAttributedString {
     func updateAttributes(_ attrs: [NSAttributedString.Key: Any], range: NSRange? = nil) {
         let calculatedRange = range ?? fullRange
 
-        for (k, v) in attrs {
-            updateAttribute(k, value: v, range: calculatedRange)
+        for (key, value) in attrs {
+            updateAttribute(key, value: value, range: calculatedRange)
         }
     }
 
@@ -159,8 +159,8 @@ public extension NSMutableAttributedString {
     func removeAttributes(_ attrs: [NSAttributedString.Key], range: NSRange? = nil) {
         let calculatedRange = range ?? fullRange
 
-        for k in attrs {
-            removeAttribute(k, range: calculatedRange)
+        for key in attrs {
+            removeAttribute(key, range: calculatedRange)
         }
     }
 

@@ -10,8 +10,8 @@ import Foundation
 
 public extension Array where Element == String {
     func sortedFinderwise() -> [String] {
-        return self.sorted(by: { x, y in
-            return x.localizedStandardCompare(y) == ComparisonResult.orderedAscending
+        return self.sorted(by: { left, right in
+            return left.localizedStandardCompare(right) == ComparisonResult.orderedAscending
         })
     }
 }
@@ -48,6 +48,8 @@ public extension Collection {
 public extension Collection where Self.Index == Int {
     func clipped(toMaxLength maxLength: Int) -> [Element] {
         if self.count <= maxLength {
+            // Can anyone explain to me why I have to do the cast at all here??
+            // swiftlint:disable:next force_cast
             return self as! [Self.Element]
         }
 

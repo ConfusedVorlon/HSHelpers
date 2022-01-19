@@ -12,21 +12,15 @@ public extension Date {
 
     /// Date.now is more descriptive than Date()
     static var now: Date {
-        get {
-            return Date()
-        }
+        return Date()
     }
 
     var isInTheFuture: Bool {
-        get {
-            return self.timeIntervalSinceNow > 0
-        }
+        return self.timeIntervalSinceNow > 0
     }
 
     var isInThePast: Bool {
-        get {
-            return self.timeIntervalSinceNow < 0
-        }
+        return self.timeIntervalSinceNow < 0
     }
 
     /// Provides a positive value for dates in the past
@@ -97,7 +91,7 @@ public extension Date {
         return formatter.string(from: self)
     }
 
-    static func -(left: Date, right: Date) -> TimeInterval { // 1
+    static func - (left: Date, right: Date) -> TimeInterval { // 1
         return left.timeIntervalSince(right)
     }
 

@@ -24,13 +24,11 @@ public class ThreadsafeDict<Key: Hashable, Value> {
     }
 
     public var unsafeContents: [Key: Value] {
-        get {
             var result: [Key: Value]?
             queue.sync {
                 result = dict
             }
             return result!
-        }
     }
 
     public subscript(index: Key) -> Value? {
@@ -55,12 +53,10 @@ public class ThreadsafeDict<Key: Hashable, Value> {
     }
 
     public var keys: Dictionary<Key, Value>.Keys {
-        get {
             var result: Dictionary<Key, Value>.Keys?
             queue.sync {
                 result = dict.keys
             }
             return result!
-        }
     }
 }

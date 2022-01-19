@@ -19,9 +19,7 @@ public extension Bundle {
 
     /// Allows Bundle.main[.version]
     subscript(index: Bundle.Key) ->  Any? {
-        get {
-            return self.object(forInfoDictionaryKey: index.rawValue)
-        }
+        return self.object(forInfoDictionaryKey: index.rawValue)
     }
 
     var appName: String? {

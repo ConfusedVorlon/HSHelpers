@@ -89,19 +89,19 @@ public extension CanSendEmail where Self: UIViewController {
 
         if MFMailComposeViewController.canSendMail() {
 
-                let mail = MFMailComposeViewControllerwDelegate()
-                mail.mailComposeDelegate = mail
-                mail.setToRecipients(to)
-                mail.setMessageBody(body, isHTML: isHtml)
-                mail.setSubject(subject)
+            let mail = MFMailComposeViewControllerwDelegate()
+            mail.mailComposeDelegate = mail
+            mail.setToRecipients(to)
+            mail.setMessageBody(body, isHTML: isHtml)
+            mail.setSubject(subject)
 
-                for attachment in attachments {
-                    mail.addAttachmentData(attachment.data,
-                                           mimeType: attachment.mimeType,
-                                           fileName: attachment.fileName)
-                }
+            for attachment in attachments {
+                mail.addAttachmentData(attachment.data,
+                                       mimeType: attachment.mimeType,
+                                       fileName: attachment.fileName)
+            }
 
-                present(mail, animated: true)
+            present(mail, animated: true)
 
         } else {
 
@@ -138,16 +138,12 @@ private class MFMailComposeViewControllerwDelegate: MFMailComposeViewController,
         switch result {
         case MFMailComposeResult.cancelled:
             print("Mail cancelled")
-            break
         case MFMailComposeResult.saved:
             print("Mail saved")
-            break
         case MFMailComposeResult.sent:
             print("Mail sent")
-            break
         case MFMailComposeResult.failed:
             print("Mail failed")
-            break
         default:
             break
         }

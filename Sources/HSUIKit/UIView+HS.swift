@@ -96,7 +96,10 @@ public extension UIView {
     }
 
     @discardableResult
-    func addConstraints(withVisualFormat format: String, options opts: NSLayoutConstraint.FormatOptions = [.directionLeftToRight], metrics: [String: Any]?, views: [String: Any]) -> [NSLayoutConstraint] {
+    func addConstraints(withVisualFormat format: String,
+                        options opts: NSLayoutConstraint.FormatOptions = [.directionLeftToRight],
+                        metrics: [String: Any]?,
+                        views: [String: Any]) -> [NSLayoutConstraint] {
 
         let constraints = NSLayoutConstraint.constraints(withVisualFormat: format,
                                                          options: opts,

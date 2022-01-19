@@ -9,6 +9,8 @@
 import Foundation
 import CoreGraphics
 
+// swiftlint:disable identifier_name
+
 /// Allows CGPoint, CGSize and CGVector to be approximately interchangable
 /// You can do maths with mixed types
 /// You can easily convert between them

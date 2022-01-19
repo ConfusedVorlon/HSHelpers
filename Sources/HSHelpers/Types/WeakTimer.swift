@@ -7,7 +7,9 @@ import Foundation
 public class WeakTimer {
     private var timer: Timer?
 
-    public class func scheduledTimer(withTimeInterval interval: TimeInterval, repeats: Bool, block: @escaping (Timer) -> Void) -> WeakTimer {
+    public class func scheduledTimer(withTimeInterval interval: TimeInterval,
+                                     repeats: Bool,
+                                     block: @escaping (Timer) -> Void) -> WeakTimer {
 
         let weakTimer = WeakTimer()
         weakTimer.timer = Timer.scheduledTimer(withTimeInterval: interval,

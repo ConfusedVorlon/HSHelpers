@@ -28,10 +28,10 @@ public extension UILabel {
         let titleSize: CGSize = rect?.size ?? bounds.size
         var testFont: UIFont = self.font
 
-        var i: Int = Int(maxFont)
+        var index: Int = Int(maxFont)
         while CGFloat(i) > minFontSize {
             // Set the new font size.
-            testFont = self.font.withSize(CGFloat(i))
+            testFont = self.font.withSize(CGFloat(index))
             // You can log the size you're trying: NSLog(@"Trying size: %u", i);
             /* This step is important: We make a constraint box
              using only the fixed WIDTH of the UILabel. The height will
@@ -52,7 +52,7 @@ public extension UILabel {
             if (labelSize.height) <= titleSize.height {
                 break
             }
-            i = i - 2
+            index -= 2
         }
         // You can see what size the function is using by outputting:
         // NSLog(@"Best size is: %u", i);

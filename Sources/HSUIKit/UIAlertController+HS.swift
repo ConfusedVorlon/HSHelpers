@@ -13,9 +13,9 @@ import UIKit
 @objc
 public extension UIAlertController {
     func present(from viewController: UIViewController,
-                   barButtonItem: UIBarButtonItem?,
-                   permittedArrowDirections: UIPopoverArrowDirection = [],
-                   completion: (() -> Void)? = nil) {
+                 barButtonItem: UIBarButtonItem?,
+                 permittedArrowDirections: UIPopoverArrowDirection = [],
+                 completion: (() -> Void)? = nil) {
 
         if preferredStyle == .actionSheet, let popoverController = popoverPresentationController {
             if let barButtonItem = barButtonItem {

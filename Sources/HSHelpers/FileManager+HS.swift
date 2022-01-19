@@ -11,15 +11,11 @@ import Foundation
 public extension FileManager {
 
     var documentsDirectory: URL {
-        get {
-            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        }
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
 
     var cachesDirectory: URL {
-        get {
-            return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        }
+        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
     }
 
     /// Creates directory in NSTemporary directory

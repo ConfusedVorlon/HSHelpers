@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public extension URLComponents {
 
     // Allows myURLComponent["myParam"] = "newValue"
@@ -16,10 +15,9 @@ public extension URLComponents {
         get {
             let items = self.queryItems ?? []
 
-            for item in items {
-                if item.name == index {
-                    return item.value
-                }
+            for item in items
+            where item.name == index {
+                return item.value
             }
 
             return nil

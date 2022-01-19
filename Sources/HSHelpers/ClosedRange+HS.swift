@@ -9,6 +9,8 @@
 import Foundation
 
 extension ClosedRange {
+
+// swiftlint:disable:next identifier_name
     init(a: Bound, b: Bound) {
         if a<b {
             self.init(uncheckedBounds: (lower: a, upper: b))
