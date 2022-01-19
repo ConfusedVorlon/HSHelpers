@@ -10,9 +10,6 @@ import Foundation
 
 public extension FileManager {
 
-    @available(*, deprecated, message: "use documentsDirectory")
-    var documentsDirectoryURL: URL {  get { return documentsDirectory }  }
-
     var documentsDirectory: URL {
         get {
             return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
