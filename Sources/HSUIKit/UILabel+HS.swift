@@ -29,7 +29,7 @@ public extension UILabel {
         var testFont: UIFont = self.font
 
         var index: Int = Int(maxFont)
-        while CGFloat(i) > minFontSize {
+        while CGFloat(index) > minFontSize {
             // Set the new font size.
             testFont = self.font.withSize(CGFloat(index))
             // You can log the size you're trying: NSLog(@"Trying size: %u", i);
