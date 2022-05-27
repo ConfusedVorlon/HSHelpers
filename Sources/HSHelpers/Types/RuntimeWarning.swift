@@ -1,10 +1,13 @@
 //
-//  File.swift
-//  
+//  Runtime Warning
+//  Allows you to raise a runtime warning which shows up as a purple triangle in XCode (like with the thread checker warnings)
+//  runtime("Naughty Runtime Warning",args...)
 //
 //  from
 //  https://github.com/pointfreeco/swift-composable-architecture/
 // https://github.com/pointfreeco/swift-composable-architecture/blob/96f47fbe858da6084ec31ee7e31c8a310ecb8168/LICENSE
+
+
 
 
 #if DEBUG
