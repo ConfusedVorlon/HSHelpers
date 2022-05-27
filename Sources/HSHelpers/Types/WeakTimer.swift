@@ -1,4 +1,5 @@
 import Foundation
+import os
 
 /// Convenience wrapper around Timer that auto-invalidates when the parent is released.
 /// (Providing you don't capture the parent in the block!)
@@ -12,6 +13,14 @@ public class WeakTimer {
                                      repeats: Bool,
                                      block: @escaping (Timer) -> Void) -> WeakTimer {
 
+
+#if DEBUG
+        if RunLoop.current != RunLoop.main {
+            runtimeWarning("Weak Timer was scheduled but not on the main runloop. This is probably not intended.")
+          
+        }
+#endif
+        
         let weakTimer = WeakTimer()
         weakTimer.timer = Timer.scheduledTimer(withTimeInterval: interval,
                                                repeats: repeats,
