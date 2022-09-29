@@ -44,7 +44,7 @@ func runtimeWarning(
   _ message: @autoclosure () -> StaticString,
   _ args: @autoclosure () -> [CVarArg] = []
 ) {
-    if #available(iOS 12.0, *) {
+    if #available(iOS 12.0,macOS 10.14, *) {
 #if DEBUG
         let message = message()
         unsafeBitCast(
