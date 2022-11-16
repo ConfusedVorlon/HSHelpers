@@ -8,21 +8,21 @@
 
 import Foundation
 
-extension NSRegularExpression {
+public extension NSRegularExpression {
 
-    open func matches(in string: String, options: NSRegularExpression.MatchingOptions = []) -> [NSTextCheckingResult] {
+    func matches(in string: String, options: NSRegularExpression.MatchingOptions = []) -> [NSTextCheckingResult] {
         return self.matches(in: string, options: options, range: NSRange(location: 0, length: string.count))
     }
 
-    open func numberOfMatches(in string: String, options: NSRegularExpression.MatchingOptions = []) -> Int {
+    func numberOfMatches(in string: String, options: NSRegularExpression.MatchingOptions = []) -> Int {
         return self.numberOfMatches(in: string, options: options, range: NSRange(location: 0, length: string.count))
     }
 
-    open func firstMatch(in string: String, options: NSRegularExpression.MatchingOptions = []) -> NSTextCheckingResult? {
+    func firstMatch(in string: String, options: NSRegularExpression.MatchingOptions = []) -> NSTextCheckingResult? {
         return self.firstMatch(in: string, options: options, range: NSRange(location: 0, length: string.count))
     }
 
-    open func rangeOfFirstMatch(in string: String, options: NSRegularExpression.MatchingOptions = []) -> NSRange {
+    func rangeOfFirstMatch(in string: String, options: NSRegularExpression.MatchingOptions = []) -> NSRange {
         return self.rangeOfFirstMatch(in: string, options: options, range: NSRange(location: 0, length: string.count))
     }
 
