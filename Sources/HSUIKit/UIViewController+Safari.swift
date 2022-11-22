@@ -12,18 +12,22 @@ import SafariServices
 
 /// Add this to any UIViewController to let it easily present a SFSafariView controller using openSafari(url:)
 public protocol CanShowSafari {
-    func openSafari(url: URL, tint: UIColor?)
+    @discardableResult
+    func openSafari(url: URL, tint: UIColor?) -> SFSafariViewController
 }
 
 public extension CanShowSafari where Self: UIViewController {
 
     @available(iOS 10.0, *)
-    func openSafari(url: URL, tint: UIColor? = nil) {
+    @discardableResult
+    func openSafari(url: URL, tint: UIColor?) -> SFSafariViewController {
         let vc = SFSafariViewController(url: url)
 
         vc.preferredBarTintColor = tint
 
         present(vc, animated: true)
+        
+        return vc
     }
 
 }
