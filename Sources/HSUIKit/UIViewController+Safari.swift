@@ -20,7 +20,8 @@ public extension CanShowSafari where Self: UIViewController {
 
     @available(iOS 10.0, *)
     @discardableResult
-    func openSafari(url: URL, tint: UIColor?) -> SFSafariViewController {
+    func openSafari(url: URL,
+                    tint: UIColor? = nil) -> SFSafariViewController {
         let vc = SFSafariViewController(url: url)
 
         vc.preferredBarTintColor = tint
