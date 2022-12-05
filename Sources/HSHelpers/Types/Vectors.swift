@@ -79,8 +79,12 @@ public extension Vector {
         return T(x: self.x.rounded(.down), y: self.y.rounded(.down))
     }
 
+    var lengthSquared: CGFloat {
+        return self.x * self.x + self.y * self.y
+    }
+    
     var length: CGFloat {
-        return sqrt(self.x * self.x + self.y * self.y)
+        return sqrt(lengthSquared)
     }
 
     var isPositive: Bool {
