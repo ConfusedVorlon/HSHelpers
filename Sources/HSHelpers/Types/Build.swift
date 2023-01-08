@@ -25,6 +25,14 @@ public struct Build {
         return isDebug
     }()
     
+    public static let isMacOS:Bool = {
+#if os(macOS)
+        return true
+#else
+        return false
+#endif
+    }()
+    
     public static let isPreview: Bool = {
         return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
     }()
