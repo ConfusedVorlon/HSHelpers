@@ -11,20 +11,33 @@ public class WeakTimer {
 
     public class func scheduledTimer(withTimeInterval interval: TimeInterval,
                                      repeats: Bool,
-                                     block: @escaping (Timer) -> Void) -> WeakTimer {
+                                     block: @MainActor @escaping (Timer) -> Void) -> WeakTimer {
 
 
-#if DEBUG
-        if RunLoop.current != RunLoop.main {
-            runtimeWarning("Weak Timer was scheduled but not on the main runloop. This is probably not intended.")
-          
-        }
-#endif
+
         
         let weakTimer = WeakTimer()
-        weakTimer.timer = Timer.scheduledTimer(withTimeInterval: interval,
-                                               repeats: repeats,
-                                               block: block)
+        
+        if RunLoop.current == RunLoop.main {
+            weakTimer.timer = Timer.scheduledTimer(withTimeInterval: interval,
+                                                   repeats: repeats,
+                                                   block: block)
+        }
+        else {
+            //if timer isn't scheduled on main runloop - then we'll dispatch the callback to main
+            //this ensures we meet the @MainActor contract
+#if DEBUG
+        runtimeWarning("Weak Timer was scheduled but not on the main runloop. This is probably not intended.")
+
+#endif
+            
+            weakTimer.timer = Timer.scheduledTimer(withTimeInterval: interval,
+                                                   repeats: repeats, block: { timer in
+                DispatchQueue.main.async {
+                    block(timer)
+                }
+            })
+        }
 
         return weakTimer
     }
