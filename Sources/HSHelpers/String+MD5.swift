@@ -14,12 +14,10 @@ import CryptoKit
 @available(iOS 13.0,macOS 10.15, *)
 public extension String {
     
-    var md5: String {
-        let digest = Insecure.MD5.hash(data: string.data(using: .utf8) ?? Data())
-
-        return digest.map {
-            String(format: "%02hhx", $0)
-        }.joined()
+    /// Returns md5 String
+    var md5String: String {
+        let data = Data(string.utf8)
+        return data.md5String
     }
 }
 
