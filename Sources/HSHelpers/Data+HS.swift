@@ -33,6 +33,6 @@ public extension Data {
         let dir = url.directory
         try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
 
-        try self.write(to: url)
+        try self.write(to: url,options: options)
     }
 }
