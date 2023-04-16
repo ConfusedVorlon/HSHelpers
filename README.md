@@ -9,10 +9,11 @@ Modules:
 * HSHelpers - Standard Swift Helpers. Cross Platform
 * HSAppKit - AppKit helpers
 * HSUIKit - UIKit helpers
-* HSSwiftUI - SwiftUI helpers
 * HSTime - Extension on https://github.com/dreymonde/Time
 
 
 [Browse Documentation](https://confusedvorlon.github.io/HSHelpers/index.html)
 
 Note - all the modules are mixed up in the docs, because that's what jazzy seems to do!
+
+For SwiftUI extensions, check out [HSSwiftUI](https://github.com/ConfusedVorlon/HSSwiftUI)
