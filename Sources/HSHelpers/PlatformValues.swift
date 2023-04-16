@@ -15,7 +15,7 @@ import Foundation
 //let device = String(iOS: "I'm an iPhone", macOS: "I'm a Mac!")
 
 
-public extension Encodable {
+public extension FloatConvertible {
     init(iOS: Self, watchOS: Self, macOS: Self, tvOS: Self) {
         #if os(iOS)
         self = iOS
