@@ -1,0 +1,9 @@
+version: 1
+builder:
+  configs:
+    - platform: ios
+      documentation_targets: [HSHelpers,HSUIKit,HSTime]
+      custom_documentation_parameters: [--include-extended-types]
+    - platform: macos
+      documentation_targets: [HSHelpers,HSAppKit,HSTime]
+      custom_documentation_parameters: [--include-extended-types]
