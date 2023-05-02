@@ -29,16 +29,24 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "HSHelpers",
-            dependencies: []),
+            dependencies: [],
+            // build documentation with extensions
+            swiftSettings: [.unsafeFlags(["-emit-extension-block-symbols"])]),
         .target(
             name: "HSAppKit",
-            dependencies: ["HSHelpers"]),
+            dependencies: ["HSHelpers"],
+            // build documentation with extensions
+            swiftSettings: [.unsafeFlags(["-emit-extension-block-symbols"])]),
         .target(
             name: "HSUIKit",
-            dependencies: ["HSHelpers"]),
+            dependencies: ["HSHelpers"],
+            // build documentation with extensions
+            swiftSettings: [.unsafeFlags(["-emit-extension-block-symbols"])]),
         .target(
             name: "HSTime",
-            dependencies: [.product(name: "Time", package: "Time")]),
+            dependencies: [.product(name: "Time", package: "Time")],
+            // build documentation with extensions
+            swiftSettings: [.unsafeFlags(["-emit-extension-block-symbols"])]),
         .testTarget(
             name: "HSHelpersTests",
             dependencies: ["HSHelpers"])
