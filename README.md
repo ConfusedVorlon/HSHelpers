@@ -12,8 +12,6 @@ Modules:
 * HSTime - Extension on https://github.com/dreymonde/Time
 
 
-[Browse Documentation](https://confusedvorlon.github.io/HSHelpers/index.html)
-
-Note - all the modules are mixed up in the docs, because that's what jazzy seems to do!
+[Browse Documentation](https://swiftpackageindex.com/confusedvorlon/hshelpers/master/documentation/hshelpers/)
 
 For SwiftUI extensions, check out [HSSwiftUI](https://github.com/ConfusedVorlon/HSSwiftUI)
