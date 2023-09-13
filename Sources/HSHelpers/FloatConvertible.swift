@@ -28,3 +28,4 @@ extension CGFloat: FloatConvertible {public var double: Double {return Double(se
 extension Float: FloatConvertible {public var double: Double {return Double(self)}}
 extension Double: FloatConvertible {public var double: Double {return self}}
 extension Int: FloatConvertible {public var double: Double {return Double(self)}}
+extension Int64: FloatConvertible {public var double: Double {return Double(self)}}
