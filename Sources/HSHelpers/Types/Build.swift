@@ -34,6 +34,20 @@ public struct Build {
     }()
     
     public static let isPreview: Bool = {
+        //Belt and braces
+        if !Build.isDebug {
+            return false
+        }
+
         return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+    }()
+    
+    public static let isUnitTesting: Bool = {
+        //Belt and braces
+        if !Build.isDebug {
+            return false
+        }
+        
+        return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }()
 }
