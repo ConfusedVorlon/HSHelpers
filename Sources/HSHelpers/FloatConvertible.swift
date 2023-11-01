@@ -13,12 +13,14 @@ public protocol FloatConvertible {
     var double: Double { get }
     var float: Float { get }
     var int: Int { get }
+    var int64: Int64 { get }
     var cgFloat: CGFloat { get }
 }
 
 public extension FloatConvertible {
     var float: Float {get {return Float(double)}}
     var int: Int {get {return lrint(floor(double))}}
+    var int64: Int64 {get {return Int64(double)}}
     var cgFloat: CGFloat {
         return CGFloat(double)
     }
