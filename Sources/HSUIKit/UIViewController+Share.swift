@@ -5,7 +5,7 @@
 //  Created by Rob Jonson on 10/04/2021.
 //
 
-#if canImport(UIKit) && !os(watchOS)
+#if canImport(UIKit) && !os(watchOS) && !os(tvOS)
 
 import Foundation
 import UIKit
@@ -13,6 +13,7 @@ import UIKit
 // Easily share an item using UIActivityViewController
 public extension UIViewController {
 
+    @available(tvOS, unavailable)
     @objc
     func share(items: [ShareItem], sourceView: UIView? = nil, permittedArrowDirections: UIPopoverArrowDirection = []) {
 

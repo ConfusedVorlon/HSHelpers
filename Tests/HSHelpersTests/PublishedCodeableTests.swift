@@ -8,7 +8,7 @@
 import Foundation
 import XCTest
 
-@available(iOS 13.0, *)
+@available(iOS 13.0,tvOS 13.0, *)
 final class PublishedCodableTests: XCTestCase {
     static var data: Data!
 
@@ -37,14 +37,14 @@ final class PublishedCodableTests: XCTestCase {
 //    ]
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, tvOS 13.0,*)
 class SimpleClass: ObservableObject, Codable {
     @Published var anInt: Int
     @Published var aBool: Bool
     @Published var aString: String
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0,tvOS 13.0, *)
 class MissingOptionalClass: ObservableObject, Codable {
     @Published var anotherString: String? = "Thing"
 }

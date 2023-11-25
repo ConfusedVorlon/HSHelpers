@@ -12,7 +12,7 @@ import SwiftUI
 
     #if canImport(UIKit)
     import UIKit
-        @available(iOS 15.0, *)
+        @available(iOS 15.0,tvOS 15.0, *)
         public extension Color {
             init(hsColor:HSColor){
                 self.init(uiColor: hsColor)
@@ -29,7 +29,7 @@ import SwiftUI
         }
     #endif
 
-@available(iOS 15.0,macOS 12.0, *)
+@available(iOS 15.0,macOS 12.0, tvOS 15.0,*)
 public extension Color {
     static let label = Color(hsColor: .label)
     static let secondaryLabel = Color(hsColor: .secondaryLabel)
@@ -38,7 +38,9 @@ public extension Color {
     static let placeholderText = Color(hsColor: .placeholderText)
     static let separator = Color(hsColor: .separator)
     static let link = Color(hsColor:.link)
+
     
+    #if !os(tvOS)
     static let systemBackground = Color(hsColor:.systemBackground)
     static let secondarySystemBackground = Color(hsColor:.secondarySystemBackground)
     
@@ -48,9 +50,8 @@ public extension Color {
     static let systemGray4  = Color(hsColor:.systemGray4)
     static let systemGray5  = Color(hsColor:.systemGray5)
     static let systemGray6  = Color(hsColor:.systemGray6)
+    #endif
 }
-
-
 
 //canImport(SwiftUI)
 #endif

@@ -26,6 +26,8 @@ public extension UIUserInterfaceIdiom {
             return "car"
         case .mac:
             return "Mac"
+        case .vision:
+            return "Vision"
         @unknown default:
             assert(false, "Unknown Device")
             return "device"
