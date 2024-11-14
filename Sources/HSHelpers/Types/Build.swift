@@ -50,4 +50,9 @@ public struct Build {
         
         return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }()
+    
+    public static let isBeingProfiled: Bool = {
+        let xpcServiceName =  ProcessInfo.processInfo.environment["XPC_SERVICE_NAME"]
+        return xpcServiceName?.starts(with: "application.com.apple.dt.Instruments") == true
+    }()
 }
