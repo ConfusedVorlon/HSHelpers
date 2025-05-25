@@ -51,6 +51,10 @@ public extension NSImage {
         let data: Data? = bmpImageRep?.representation(using: NSBitmapImageRep.FileType.png, properties: [:])
         return data
     }
+    
+    func pngData() -> Data? {
+        return self.pngRepresentation()
+    }
 
     func jpegRepresentation(compression: Float = 1.0, size requiredSize: NSSize? = nil) -> Data? {
         let newSize = requiredSize ?? size
