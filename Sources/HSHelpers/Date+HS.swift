@@ -28,68 +28,103 @@ public extension Date {
         return -self.timeIntervalSinceNow
     }
 
+    // MARK: - Cached Formatters
+    
+    private static let shortDateTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM-dd HH:mm:ss"
+        return formatter
+    }()
+    
+    private static let fixedShortDateTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM-dd HH:mm:ss"
+        return formatter
+    }()
+    
+    private static let presentableShortDateTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    private static let presentableShortDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
+    private static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+    
+    private static let presentableTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    private static let localTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+    
+    private static let presentableLocalTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter
+    }()
+
+    // MARK: - String Properties (using cached formatters)
+
     // see best practice notes at https://nsdateformatter.com/
     // use time style and date style to provide locale aware strings
 
     @available(*, deprecated, message: "use presentableShortDateTimeString")
     var shortDateTimeString: String {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "MMM-dd HH:mm:ss"
-        let result = dateFormat.string(from: self)
-        return result
+        return Self.shortDateTimeFormatter.string(from: self)
     }
 
     var fixedShortDateTimeString: String {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "MMM-dd HH:mm:ss"
-        let result = dateFormat.string(from: self)
-        return result
+        return Self.fixedShortDateTimeFormatter.string(from: self)
     }
 
     var presentableShortDateTimeString: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        return formatter.string(from: self)
+        return Self.presentableShortDateTimeFormatter.string(from: self)
     }
 
     var presentableShortDateString: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        return formatter.string(from: self)
+        return Self.presentableShortDateFormatter.string(from: self)
     }
 
     @available(*, deprecated, message: "use presentableTmeString")
     var timeString: String {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "HH:mm"
-        let result = dateFormat.string(from: self)
-        return result
+        return Self.timeFormatter.string(from: self)
     }
 
     var presentableTimeString: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter.string(from: self)
+        return Self.presentableTimeFormatter.string(from: self)
     }
 
     @available(*, deprecated, message: "use presentableLocalTimeString")
     var localTimeString: String {
-        let dateFormat = DateFormatter()
-        dateFormat.timeZone = TimeZone.current
-        dateFormat.dateFormat = "HH:mm"
-        return dateFormat.string(from: self)
+        return Self.localTimeFormatter.string(from: self)
     }
 
     var presentableLocalTimeString: String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter.string(from: self)
+        return Self.presentableLocalTimeFormatter.string(from: self)
     }
+
+    // MARK: - Operators and Static Methods
 
     static func - (left: Date, right: Date) -> TimeInterval { // 1
         return left.timeIntervalSince(right)
